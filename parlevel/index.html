@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par Level AI — Managed Procurement for Nursing Homes</title>
+    <meta name="description" content="Par Level AI runs procurement for nursing homes. Lower costs, zero effort, national scale. 18-25% average cost reduction.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green: #00C878;
+            --green-light: #e8faf1;
+            --green-dark: #00a563;
+            --text: #1a1a1a;
+            --text-secondary: #5c5c5c;
+            --text-muted: #8a8a8a;
+            --bg: #ffffff;
+            --bg-alt: #f9fafb;
+            --bg-card: #ffffff;
+            --border: #e5e7eb;
+            --border-light: #f0f0f0;
+            --radius: 12px;
+            --radius-lg: 16px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .serif { font-family: 'Newsreader', Georgia, serif; }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 0;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        .logo span {
+            color: var(--green);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--green-dark);
+            box-shadow: 0 4px 16px rgba(0, 200, 120, 0.3);
+        }
+
+        .btn-large {
+            padding: 14px 32px;
+            font-size: 0.95rem;
+            border-radius: 10px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        .btn-arrow::after {
+            content: '\2192';
+            transition: transform 0.2s ease;
+        }
+
+        .btn-arrow:hover::after {
+            transform: translateX(3px);
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            padding: 160px 0 100px;
+            text-align: center;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: var(--green-light);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--green-dark);
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: clamp(2.5rem, 5.5vw, 4rem);
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            line-height: 1.12;
+            color: var(--text);
+            margin-bottom: 20px;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-sub {
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .hero-ctas {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* ─── STATS ─── */
+        .stats {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 52px 0;
+            background: var(--bg-alt);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .stat-item h3 span { color: var(--green); }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ─── SECTION SHARED ─── */
+        section { padding: 100px 0; }
+
+        .section-eyebrow {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            margin-bottom: 16px;
+            max-width: 560px;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            line-height: 1.7;
+            margin-bottom: 48px;
+        }
+
+        .section-center {
+            text-align: center;
+        }
+
+        .section-center .section-title,
+        .section-center .section-desc {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ─── WHAT WE HANDLE ─── */
+        .handle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .handle-card {
+            padding: 28px 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: all 0.2s ease;
+        }
+
+        .handle-card:hover {
+            border-color: var(--green);
+            box-shadow: 0 2px 12px rgba(0, 200, 120, 0.08);
+        }
+
+        .handle-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--green-light);
+            border-radius: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+
+        .handle-card h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .handle-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ─── WHY SWITCH ─── */
+        .why-section { background: var(--bg-alt); }
+
+        .why-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .why-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .why-card {
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .why-card h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .why-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .why-card-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--green-light);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        /* ─── SAVINGS VISUAL ─── */
+        .savings-visual {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            position: relative;
+        }
+
+        .savings-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 28px;
+        }
+
+        .savings-header p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .savings-badge {
+            padding: 4px 10px;
+            background: var(--green-light);
+            color: var(--green-dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            border-radius: 100px;
+        }
+
+        .savings-amount {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 2.8rem;
+            font-weight: 500;
+            color: var(--green);
+            margin-bottom: 4px;
+        }
+
+        .savings-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+
+        .savings-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .bar-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            width: 50px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 100px;
+            transition: width 0.6s ease;
+        }
+
+        .bar-fill-green { background: var(--green); }
+        .bar-fill-gray { background: #d1d5db; }
+
+        /* ─── NO COST ─── */
+        .no-cost-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .no-cost-card {
+            padding: 36px 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .no-cost-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--green-light);
+            border-radius: 12px;
+            font-size: 1.3rem;
+            margin: 0 auto 16px;
+        }
+
+        .no-cost-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .no-cost-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ─── HOW IT WORKS ─── */
+        .how-section { background: var(--bg-alt); }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            position: relative;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--green);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            margin: 0 auto 20px;
+        }
+
+        .step h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        .step-connector {
+            position: absolute;
+            top: 24px;
+            left: calc(50% + 32px);
+            width: calc(100% - 64px);
+            height: 1px;
+            background: var(--border);
+        }
+
+        .step:last-child .step-connector { display: none; }
+
+        /* ─── CTA SECTION ─── */
+        .cta-section {
+            text-align: center;
+            padding: 100px 0 120px;
+        }
+
+        .cta-section h2 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-brand p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .footer-contact a {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-contact a:hover { color: var(--green); }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+            .why-layout { grid-template-columns: 1fr; gap: 40px; }
+            .why-cards { grid-template-columns: 1fr; }
+            .no-cost-grid { grid-template-columns: 1fr; }
+            .steps { grid-template-columns: 1fr; gap: 40px; }
+            .step-connector { display: none; }
+            section { padding: 72px 0; }
+        }
+
+        @media (max-width: 480px) {
+            .hero { padding: 130px 0 72px; }
+            .hero-ctas { flex-direction: column; }
+            .btn-large { width: 100%; justify-content: center; }
+            .handle-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ─── NAV ─── -->
+    <nav>
+        <div class="container nav-inner">
+            <div class="logo">Par Level <span>AI</span></div>
+            <a href="https://calendar.google.com/calendar/appointments/schedules/d3Ms4uyMrv9aP3ja6" class="btn btn-primary" target="_blank" rel="noopener">Book a Call</a>
+        </div>
+    </nav>
+
+    <!-- ─── HERO ─── -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-eyebrow">Managed Procurement for Healthcare</div>
+            <h1>We run procurement for nursing homes.</h1>
+            <p class="hero-sub">Lower costs. Zero effort. National scale. We handle every purchase order so your team can focus on resident care.</p>
+            <div class="hero-ctas">
+                <a href="https://calendar.google.com/calendar/appointments/schedules/d3Ms4uyMrv9aP3ja6" class="btn btn-primary btn-large btn-arrow" target="_blank" rel="noopener">Let Us Take Over Your Purchasing</a>
+                <a href="#how-it-works" class="btn btn-outline btn-large">See How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── STATS ─── -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>100<span>+</span></h3>
+                    <p>Nursing homes served</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1,500</h3>
+                    <p>SKUs managed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>18&ndash;25<span>%</span></h3>
+                    <p>Average cost reduction</p>
+                </div>
+                <div class="stat-item">
+                    <h3><span>$</span>0</h3>
+                    <p>Cost to you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── WHAT WE HANDLE ─── -->
+    <section>
+        <div class="container">
+            <div class="section-eyebrow">What We Handle</div>
+            <h2 class="section-title">Everything between you and your suppliers.</h2>
+            <p class="section-desc">We take over your entire procurement workflow so nothing falls through the cracks.</p>
+            <div class="handle-grid">
+                <div class="handle-card">
+                    <div class="handle-icon">🔍</div>
+                    <h4>Vendor Sourcing</h4>
+                    <p>We find the best suppliers and negotiate master distributor agreements on your behalf.</p>
+                </div>
+                <div class="handle-card">
+                    <div class="handle-icon">💲</div>
+                    <h4>Price Negotiation</h4>
+                    <p>National buying power means volume pricing individual facilities can't access alone.</p>
+                </div>
+                <div class="handle-card">
+                    <div class="handle-icon">📋</div>
+                    <h4>Purchase Orders</h4>
+                    <p>We create, send, and track every PO. Your staff never touches a purchase order again.</p>
+                </div>
+                <div class="handle-card">
+                    <div class="handle-icon">📊</div>
+                    <h4>Inventory Optimization</h4>
+                    <p>AI-driven par levels prevent over-ordering and stock-outs across all your facilities.</p>
+                </div>
+                <div class="handle-card">
+                    <div class="handle-icon">📄</div>
+                    <h4>Monthly Reporting</h4>
+                    <p>Transparent reports on spend, savings, and inventory delivered to your inbox every month.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── WHY SWITCH ─── -->
+    <section class="why-section">
+        <div class="container">
+            <div class="why-layout">
+                <div>
+                    <div class="section-eyebrow">Why Switch</div>
+                    <h2 class="section-title">Better pricing. Less work. Fewer mistakes.</h2>
+                    <p class="section-desc">Facilities that switch to Par Level AI save money from month one and free up hours of staff time every week.</p>
+                    <div class="why-cards">
+                        <div class="why-card">
+                            <div class="why-card-icon">🌐</div>
+                            <h4>National Buying Power</h4>
+                            <p>Our network aggregates demand across 100+ facilities for volume pricing.</p>
+                        </div>
+                        <div class="why-card">
+                            <div class="why-card-icon">⏱️</div>
+                            <h4>Less Workload</h4>
+                            <p>We handle ordering, vendor calls, and invoice reconciliation for you.</p>
+                        </div>
+                        <div class="why-card">
+                            <div class="why-card-icon">✅</div>
+                            <h4>Fewer Mistakes</h4>
+                            <p>Centralized tracking eliminates duplicate orders and missed deliveries.</p>
+                        </div>
+                        <div class="why-card">
+                            <div class="why-card-icon">🤖</div>
+                            <h4>AI Optimization</h4>
+                            <p>Machine learning sets optimal par levels and flags spending anomalies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="savings-visual">
+                    <div class="savings-header">
+                        <p>Annual Savings Report</p>
+                        <div class="savings-badge">LIVE DATA</div>
+                    </div>
+                    <div class="savings-amount">$84,230</div>
+                    <div class="savings-label">saved this year</div>
+                    <div class="savings-bars">
+                        <div class="bar-row">
+                            <span class="bar-label">Q1</span>
+                            <div class="bar-track"><div class="bar-fill bar-fill-green" style="width: 60%"></div></div>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Q2</span>
+                            <div class="bar-track"><div class="bar-fill bar-fill-green" style="width: 75%"></div></div>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Q3</span>
+                            <div class="bar-track"><div class="bar-fill bar-fill-green" style="width: 85%"></div></div>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Q4</span>
+                            <div class="bar-track"><div class="bar-fill bar-fill-gray" style="width: 40%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── NO COST ─── -->
+    <section>
+        <div class="container section-center">
+            <div class="section-eyebrow">Zero Cost to You</div>
+            <h2 class="section-title">No fees. No catch. Just savings.</h2>
+            <p class="section-desc">We make money when you save money. Our gain-share model means there's zero financial risk to switch.</p>
+            <div class="no-cost-grid">
+                <div class="no-cost-card">
+                    <div class="no-cost-icon">🚫</div>
+                    <h4>No Software Fees</h4>
+                    <p>No platform subscription, no per-user charges, no hidden technology costs.</p>
+                </div>
+                <div class="no-cost-card">
+                    <div class="no-cost-icon">🤝</div>
+                    <h4>No Service Fees</h4>
+                    <p>We only earn a share of the savings we generate. If we don't save you money, you don't pay.</p>
+                </div>
+                <div class="no-cost-card">
+                    <div class="no-cost-icon">⚡</div>
+                    <h4>Simple Onboarding</h4>
+                    <p>Share your current vendor list and we handle the rest. Most facilities are live within two weeks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── HOW IT WORKS ─── -->
+    <section class="how-section" id="how-it-works">
+        <div class="container section-center">
+            <div class="section-eyebrow">How It Works</div>
+            <h2 class="section-title">Three steps. That's it.</h2>
+            <p class="section-desc">Getting started takes less time than your last vendor call.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-connector"></div>
+                    <div class="step-number">1</div>
+                    <h4>Onboard</h4>
+                    <p>Share your vendor list, current contracts, and product catalog. We audit your spend and build a procurement plan.</p>
+                </div>
+                <div class="step">
+                    <div class="step-connector"></div>
+                    <div class="step-number">2</div>
+                    <h4>We Purchase</h4>
+                    <p>Our team manages all ordering, vendor relationships, and delivery logistics across your facilities.</p>
+                </div>
+                <div class="step">
+                    <div class="step-connector"></div>
+                    <div class="step-number">3</div>
+                    <h4>You Review</h4>
+                    <p>Get monthly reports showing exactly what you spent, what you saved, and how inventory is performing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── CTA ─── -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to hand off procurement?</h2>
+            <p>Book a 30-minute call. We'll show you exactly how much you can save.</p>
+            <a href="https://calendar.google.com/calendar/appointments/schedules/d3Ms4uyMrv9aP3ja6" class="btn btn-primary btn-large btn-arrow" target="_blank" rel="noopener">Let Us Take Over Your Purchasing</a>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <div class="logo">Par Level <span>AI</span></div>
+                <p>&copy; 2026 Par Level AI</p>
+            </div>
+            <div class="footer-contact">
+                <a href="mailto:david@meddmax.com">david@meddmax.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
