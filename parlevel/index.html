@@ -3,727 +3,928 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Par Level AI — ERP-Integrated Procurement for National Nursing Home Groups</title>
-    <meta name="description" content="Par Level AI: Deploy $500M supply chain infrastructure for nursing home procurement. Manufacturer-direct MeddMax distribution through McKesson and Medline. Healthcare Supply Chain AI.">
-    <meta name="keywords" content="Nursing Home Procurement, MeddMax Distribution, Healthcare Supply Chain AI, SNF Procurement, McKesson, Medline">
+    <title>Par Level AI — Managed Procurement for Healthcare Facilities</title>
+    <meta name="description" content="Par Level AI: managed procurement for healthcare facilities. Free to the facility, funded by volume. Powered by MeddMax LLC.">
+    <meta name="keywords" content="Nursing Home Procurement, MeddMax Distribution, Healthcare Supply Chain AI">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --navy: #0A1F44;
-            --navy-95: rgba(10, 31, 68, 0.95);
-            --navy-light: #112d5a;
-            --teal: #00A7B5;
-            --teal-light: #00c4d4;
-            --teal-dim: rgba(0, 167, 181, 0.08);
-            --teal-border: rgba(0, 167, 181, 0.2);
-            --gold: #F4B400;
-            --gold-hover: #f5c133;
-            --slate: #F1F5F9;
-            --bg: #ffffff;
-            --text: #0A1F44;
-            --text-sec: #475569;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --border-light: #f1f5f9;
-            --mono: 'JetBrains Mono', 'Fira Code', monospace;
-            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --ob:    #0A0F1E;
+            --ob2:   #111827;
+            --ob3:   #1E2A3A;
+            --az:    #0EA5E9;
+            --az-dk: #0284C7;
+            --wh:    #FFFFFF;
+            --mi:    #94A3B8;
+            --pt:    #E2E8F0;
+            --gr:    #34D399;
         }
 
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: var(--sans);
-            background: var(--bg);
-            color: var(--text);
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--ob);
+            color: var(--wh);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        .mono { font-family: var(--mono); }
-        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+        h1, h2, h3, h4, h5, h6, .syne { font-family: 'Syne', sans-serif; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        img { max-width: 100%; height: auto; display: block; }
 
-        /* ─── STICKY NAV ─── */
+        /* ─── ANIMATIONS ─── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes drawRule {
+            from { width: 0; }
+            to   { width: 320px; }
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.4; }
+            50%      { opacity: 1; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        .hero-anim { opacity: 0; animation: fadeUp 0.8s ease forwards; }
+        .hero-anim-1 { animation-delay: 0.1s; }
+        .hero-anim-2 { animation-delay: 0.25s; }
+        .hero-anim-3 { animation-delay: 0.4s; }
+        .hero-anim-4 { animation-delay: 0.55s; }
+        .hero-anim-5 { animation-delay: 0.7s; }
+
+        /* ─── NAV ─── */
         nav {
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            padding: 12px 0;
-            background: var(--navy-95);
+            padding: 16px 0;
+            transition: background 0.3s ease, backdrop-filter 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(10, 15, 30, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
-        .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-
-        .logo { font-size: 1.05rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; }
-        .logo span { color: var(--teal); }
-
-        .nav-links { display: flex; align-items: center; gap: 28px; }
-        .nav-links a { font-size: 0.78rem; color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 500; transition: color 0.2s; letter-spacing: 0.01em; }
-        .nav-links a:hover { color: #fff; }
-
-        .btn-audit {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 9px 20px; border-radius: 6px;
-            font-family: var(--sans); font-size: 0.8rem; font-weight: 700;
-            text-decoration: none; border: none; cursor: pointer;
-            background: var(--gold); color: var(--navy);
-            transition: all 0.2s ease;
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .btn-audit:hover { background: var(--gold-hover); box-shadow: 0 2px 12px rgba(244,180,0,0.3); }
+        .nav-brand {
+            display: flex;
+            flex-direction: column;
+        }
 
-        .btn-lg { padding: 14px 32px; font-size: 0.9rem; border-radius: 8px; }
-        .btn-outline-light { background: transparent; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.15); }
-        .btn-outline-light:hover { border-color: var(--teal); color: var(--teal-light); background: transparent; }
+        .nav-logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--wh);
+            letter-spacing: 0.18em;
+            text-decoration: none;
+        }
 
-        .btn-arrow::after { content: ' \2192'; }
+        .nav-powered {
+            font-size: 10px;
+            color: var(--az);
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.82rem;
+            color: var(--mi);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--wh); }
+
+        .btn-az {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 24px;
+            background: var(--az);
+            color: var(--wh);
+            font-family: 'Syne', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-az:hover {
+            background: var(--az-dk);
+            transform: translateY(-1px);
+        }
+
+        .btn-az-lg {
+            padding: 14px 32px;
+            font-size: 0.88rem;
+            border-radius: 8px;
+        }
+
+        .btn-az-outline {
+            background: transparent;
+            border: 1px solid var(--az);
+            color: var(--az);
+        }
+
+        .btn-az-outline:hover {
+            background: rgba(14, 165, 233, 0.08);
+            transform: translateY(-1px);
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.15);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--wh);
+            transition: transform 0.3s, opacity 0.3s;
+        }
 
         /* ─── HERO ─── */
         .hero {
-            padding: 140px 0 88px;
-            background: var(--navy);
-            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 140px 0 80px;
             position: relative;
             overflow: hidden;
         }
 
         .hero::before {
             content: '';
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background:
-                repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px),
-                repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px);
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(14, 165, 233, 0.12) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 100%);
             pointer-events: none;
         }
 
-        .hero-inner { position: relative; max-width: 760px; }
+        .hero-inner { position: relative; max-width: 720px; }
 
-        .hero-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(0,167,181,0.1);
-            border: 1px solid rgba(0,167,181,0.2);
-            border-radius: 4px;
-            font-family: var(--mono); font-size: 0.7rem; font-weight: 600;
-            color: var(--teal-light);
-            margin-bottom: 24px;
-            letter-spacing: 0.04em;
+        .hero-rule {
+            display: block;
+            height: 1px;
+            background: var(--az);
+            margin-bottom: 32px;
+            animation: drawRule 1.2s ease forwards;
+        }
+
+        .hero-label {
+            font-family: 'Syne', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--az);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 4.5vw, 3rem);
-            font-weight: 800;
-            letter-spacing: -0.035em;
-            line-height: 1.15;
-            color: #fff;
+            font-size: clamp(42px, 7vw, 84px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.05;
+            color: var(--wh);
             margin-bottom: 20px;
         }
 
+        .hero h1 .az { color: var(--az); }
+
         .hero-sub {
-            font-size: 1rem;
-            color: rgba(255,255,255,0.6);
-            max-width: 620px;
-            line-height: 1.75;
-            margin-bottom: 36px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(18px, 2vw, 20px);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--mi);
+            margin-bottom: 40px;
         }
 
-        .hero-sub strong { color: rgba(255,255,255,0.9); }
-
-        .hero-ctas { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-
-        .hero-metric-strip {
-            display: flex; gap: 32px; margin-top: 48px;
-            padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.06);
+        .hero-ctas {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
         }
 
-        .hero-metric { }
-        .hero-metric .val {
-            font-family: var(--mono); font-size: 1.4rem; font-weight: 700; color: var(--teal-light);
-        }
-        .hero-metric .label {
-            font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-top: 2px; font-weight: 500;
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
         }
 
-        /* ─── SECTIONS ─── */
-        section { padding: 88px 0; }
-        .bg-slate { background: var(--slate); }
-        .bg-white { background: var(--bg); }
-        .bg-navy { background: var(--navy); color: #fff; }
+        .scroll-indicator span {
+            font-family: 'Syne', sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: var(--mi);
+        }
+
+        .scroll-indicator .line {
+            width: 1px;
+            height: 32px;
+            background: var(--mi);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        /* ─── STATS BAR ─── */
+        .stats-bar {
+            background: var(--ob2);
+            border-top: 1px solid rgba(148, 163, 184, 0.08);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+            padding: 52px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 0 24px;
+        }
+
+        .stat-item + .stat-item {
+            border-left: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .stat-num {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 700;
+            color: var(--az);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--mi);
+        }
+
+        /* ─── SECTION SHARED ─── */
+        .sec { padding: 100px 0; }
+        .sec-ob { background: var(--ob); }
+        .sec-ob2 { background: var(--ob2); }
+        .sec-wh { background: var(--wh); color: var(--ob); }
 
         .sec-label {
-            font-family: var(--mono);
-            font-size: 0.68rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 0.14em;
-            color: var(--teal); margin-bottom: 10px;
+            font-family: 'Syne', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--az);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .sec-label-rule {
+            display: inline-block;
+            width: 48px;
+            height: 1px;
+            background: var(--az);
         }
 
         .sec-title {
-            font-size: clamp(1.6rem, 3vw, 2.2rem);
-            font-weight: 800; letter-spacing: -0.03em;
-            color: var(--navy); margin-bottom: 12px;
-            max-width: 560px; line-height: 1.2;
+            font-size: clamp(36px, 5vw, 68px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        .sec-title-sm {
+            font-size: clamp(32px, 4vw, 58px);
+        }
+
+        .sec-title-xs {
+            font-size: clamp(30px, 3.5vw, 50px);
         }
 
         .sec-desc {
-            font-size: 0.95rem; color: var(--text-sec);
-            max-width: 520px; line-height: 1.7; margin-bottom: 44px;
-        }
-
-        .bg-navy .sec-title { color: #fff; }
-        .bg-navy .sec-desc { color: rgba(255,255,255,0.6); }
-        .bg-navy .sec-label { color: var(--gold); }
-
-        .center { text-align: center; }
-        .center .sec-title, .center .sec-desc { margin-left: auto; margin-right: auto; }
-
-        /* ─── CALCULATOR ─── */
-        .calc-card {
-            max-width: 640px; margin: 0 auto;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .calc-header {
-            background: var(--navy);
-            padding: 20px 28px;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-
-        .calc-header h3 { font-size: 0.88rem; font-weight: 700; color: #fff; }
-
-        .calc-badge {
-            font-family: var(--mono);
-            font-size: 0.65rem; font-weight: 700;
-            padding: 3px 10px; border-radius: 3px;
-            background: rgba(0,167,181,0.15); color: var(--teal-light);
-            letter-spacing: 0.06em;
-        }
-
-        .calc-body { padding: 28px; }
-
-        .calc-slider-label {
-            display: flex; align-items: baseline; justify-content: space-between;
-            margin-bottom: 8px;
-        }
-
-        .calc-slider-label span {
-            font-size: 0.82rem; font-weight: 600; color: var(--text);
-        }
-
-        .calc-slider-label .bed-val {
-            font-family: var(--mono); font-size: 1.1rem; font-weight: 700; color: var(--navy);
-        }
-
-        input[type="range"] {
-            -webkit-appearance: none; appearance: none;
-            width: 100%; height: 6px;
-            background: var(--slate); border-radius: 100px;
-            outline: none; margin-bottom: 28px;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none; appearance: none;
-            width: 20px; height: 20px;
-            background: var(--navy); border-radius: 50%;
-            cursor: pointer; border: 3px solid var(--teal);
-        }
-
-        input[type="range"]::-moz-range-thumb {
-            width: 20px; height: 20px;
-            background: var(--navy); border-radius: 50%;
-            cursor: pointer; border: 3px solid var(--teal);
-        }
-
-        .calc-results { border-top: 1px solid var(--border); padding-top: 24px; }
-
-        .calc-row {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .calc-row:last-child { border-bottom: none; }
-
-        .calc-row .label { font-size: 0.85rem; color: var(--text-sec); }
-        .calc-row .value { font-family: var(--mono); font-size: 0.95rem; font-weight: 700; color: var(--navy); }
-
-        .calc-row.highlight { background: rgba(0,167,181,0.04); margin: 0 -28px; padding: 14px 28px; border-radius: 0; }
-        .calc-row.highlight .label { font-weight: 700; color: var(--navy); }
-        .calc-row.highlight .value { color: var(--teal); font-size: 1.1rem; }
-
-        .calc-footnote {
-            font-size: 0.72rem; color: var(--text-muted);
-            margin-top: 16px; padding-top: 12px;
-            border-top: 1px solid var(--border-light);
-            font-style: italic;
-        }
-
-        /* ─── COMPARISON TABLE ─── */
-        .compare-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: 16px; max-width: 900px; margin: 0 auto;
-        }
-
-        .compare-col {
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .compare-col.pal { border-color: var(--teal-border); }
-
-        .compare-col-head {
-            padding: 18px 20px;
-            font-size: 0.82rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 0.06em;
-        }
-
-        .compare-col:nth-child(1) .compare-col-head { background: var(--slate); color: var(--text-muted); }
-        .compare-col:nth-child(2) .compare-col-head { background: #fef2f2; color: #991b1b; }
-        .compare-col.pal .compare-col-head { background: var(--navy); color: var(--gold); }
-
-        .compare-col-body { padding: 4px 0; }
-
-        .compare-item {
-            padding: 14px 20px;
-            border-bottom: 1px solid var(--border-light);
-            font-size: 0.84rem;
-        }
-
-        .compare-item:last-child { border-bottom: none; }
-
-        .compare-col:nth-child(1) .compare-item { font-weight: 600; color: var(--navy); }
-        .compare-col:nth-child(2) .compare-item { color: #991b1b; }
-        .compare-col.pal .compare-item { color: var(--navy); font-weight: 600; }
-        .compare-col.pal .compare-item .check { color: var(--teal); margin-right: 4px; }
-
-        /* ─── PORTAL MOCKUP ─── */
-        .portal-window {
-            max-width: 700px; margin: 0 auto;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            overflow: hidden;
-            background: var(--bg);
-        }
-
-        .portal-chrome {
-            background: var(--slate);
-            padding: 10px 16px;
-            display: flex; align-items: center; gap: 8px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .portal-dot { width: 8px; height: 8px; border-radius: 50%; }
-        .portal-dot.r { background: #f87171; }
-        .portal-dot.y { background: #fbbf24; }
-        .portal-dot.g { background: #34d399; }
-
-        .portal-url {
-            flex: 1; margin-left: 8px;
-            font-family: var(--mono); font-size: 0.68rem;
-            color: var(--text-muted); background: var(--bg);
-            padding: 4px 12px; border-radius: 4px;
-            border: 1px solid var(--border);
-        }
-
-        .portal-body { padding: 24px; }
-
-        .portal-header-row {
-            display: flex; align-items: center; justify-content: space-between;
-            margin-bottom: 20px; padding-bottom: 16px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .portal-mfg {
-            font-family: var(--mono); font-size: 0.78rem; font-weight: 700; color: var(--navy);
-        }
-
-        .portal-status {
-            display: inline-flex; align-items: center; gap: 6px;
-            font-size: 0.7rem; font-weight: 700; color: #059669;
-        }
-
-        .portal-status::before {
-            content: ''; width: 6px; height: 6px;
-            background: #059669; border-radius: 50%;
-        }
-
-        .portal-table {
-            width: 100%; border-collapse: collapse;
-            font-size: 0.78rem;
-        }
-
-        .portal-table th {
-            text-align: left;
-            padding: 8px 10px;
-            font-size: 0.68rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 0.08em;
-            color: var(--text-muted); background: var(--slate);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .portal-table td {
-            padding: 10px;
-            border-bottom: 1px solid var(--border-light);
-            color: var(--text);
-        }
-
-        .portal-table td:first-child { font-family: var(--mono); font-weight: 600; font-size: 0.72rem; color: var(--text-muted); }
-        .portal-table td:last-child { font-family: var(--mono); font-weight: 600; color: var(--teal); }
-
-        .portal-footer-note {
-            margin-top: 16px;
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            text-align: center;
-            font-style: italic;
-        }
-
-        /* ─── COST OF INACTION ─── */
-        .inaction-section {
-            background: var(--navy);
-            color: #fff;
-            text-align: center;
-            padding: 80px 0 88px;
-        }
-
-        .inaction-amount {
-            font-family: var(--mono);
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 8px;
-        }
-
-        .inaction-section h2 {
-            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-        }
-
-        .inaction-section .sub {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.5);
+            font-size: 17px;
+            color: var(--mi);
+            line-height: 1.75;
             max-width: 540px;
-            margin: 0 auto 36px;
+            margin-bottom: 48px;
+        }
+
+        .sec-wh .sec-desc { color: var(--mi); }
+
+        /* ─── TWO-COLUMN GRID ─── */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .img-container {
+            border: 1px solid var(--pt);
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            background: var(--ob2);
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-container-wide {
+            aspect-ratio: 16 / 10;
+            border-radius: 8px;
+            background: var(--ob3);
+        }
+
+        .img-container-wide img {
+            object-fit: contain;
+        }
+
+        .placeholder-text {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: var(--mi);
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ─── SOLUTION CARDS ─── */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--pt);
+        }
+
+        .solution-card {
+            background: var(--ob2);
+            padding: 48px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--az);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .solution-card:hover::before { transform: scaleX(1); }
+
+        .solution-num {
+            font-family: 'Syne', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--az);
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+
+        .solution-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--wh);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .solution-card p {
+            font-size: 14px;
+            color: var(--mi);
             line-height: 1.7;
         }
 
-        .inaction-section .req {
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.35);
-            max-width: 480px;
-            margin: 16px auto 0;
+        /* ─── HOW IT WORKS TIMELINE ─── */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            position: relative;
+        }
+
+        .timeline-grid::before {
+            content: '';
+            position: absolute;
+            top: 54px;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--az), var(--az), transparent);
+        }
+
+        .timeline-step {
+            text-align: center;
+            padding: 0 12px;
+            position: relative;
+        }
+
+        .timeline-num {
+            font-family: 'Syne', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--az);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .timeline-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--az);
+            margin: 0 auto 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-step h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--wh);
+            margin-bottom: 8px;
+        }
+
+        .timeline-step p {
+            font-size: 13px;
+            color: var(--mi);
             line-height: 1.6;
+        }
+
+        .timeline-banner {
+            margin-top: 56px;
+            padding: 20px 0;
+            background: var(--az);
+            text-align: center;
+        }
+
+        .timeline-banner p {
+            font-family: 'Syne', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--wh);
+            letter-spacing: 0.04em;
+        }
+
+        /* ─── PLATFORM BULLETS ─── */
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .bullet-list li {
+            font-size: 15px;
+            color: var(--mi);
+            line-height: 1.7;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .bullet-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--az);
+            font-weight: 700;
+        }
+
+        /* ─── FORM ─── */
+        .form-card {
+            background: var(--ob2);
+            border: 1px solid var(--pt);
+            border-radius: 6px;
+            padding: 48px 40px;
+        }
+
+        .form-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--wh);
+            margin-bottom: 28px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-full { grid-column: 1 / -1; }
+
+        .form-field label {
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--mi);
+            margin-bottom: 6px;
+        }
+
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            width: 100%;
+            padding: 12px 14px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            border-radius: 6px;
+            color: var(--wh);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .form-field input:focus,
+        .form-field select:focus,
+        .form-field textarea:focus {
+            border-color: var(--az);
+            background: rgba(14, 165, 233, 0.04);
+        }
+
+        .form-field textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-field select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+        }
+
+        .form-field select option {
+            background: var(--ob2);
+            color: var(--wh);
+        }
+
+        .form-submit {
+            margin-top: 20px;
+        }
+
+        .form-submit .btn-az {
+            width: 100%;
+            justify-content: center;
+            padding: 14px;
+            font-weight: 700;
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: var(--mi);
+            text-align: center;
+            margin-top: 14px;
+        }
+
+        /* ─── BENEFIT ROWS ─── */
+        .benefit-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .benefit-row {
+            border-left: 2px solid var(--az);
+            background: var(--ob2);
+            padding: 14px 16px;
+            font-size: 14px;
+            color: var(--mi);
+            line-height: 1.6;
+        }
+
+        /* ─── REPORT ROWS ─── */
+        .report-rows {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .report-row {
+            border-left: 2px solid var(--az);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+            padding: 16px 0 16px 20px;
+        }
+
+        .report-row h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--wh);
+            margin-bottom: 2px;
+        }
+
+        .report-row p {
+            font-size: 12px;
+            color: var(--mi);
+        }
+
+        /* ─── SYSTEMS GRID ─── */
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--pt);
+        }
+
+        .system-card {
+            background: var(--ob2);
+            padding: 40px 36px;
+        }
+
+        .system-num {
+            font-family: 'Syne', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--az);
+            opacity: 0.7;
+            margin-bottom: 12px;
+        }
+
+        .system-card h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--wh);
+            margin-bottom: 12px;
+        }
+
+        .system-rule {
+            width: 28px;
+            height: 1px;
+            background: var(--pt);
+            margin-bottom: 12px;
+        }
+
+        .system-card p {
+            font-size: 13px;
+            color: var(--mi);
+            line-height: 1.65;
+        }
+
+        /* ─── CLOSING ─── */
+        .closing {
+            padding: 160px 0;
+            text-align: center;
+        }
+
+        .closing-stack {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(36px, 6vw, 80px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 40px;
+        }
+
+        .closing-stack .az { color: var(--az); }
+
+        .closing-rule {
+            width: 200px;
+            height: 1px;
+            background: var(--az);
+            margin: 0 auto 40px;
+        }
+
+        .closing-text {
+            font-style: italic;
+            font-weight: 300;
+            font-size: 17px;
+            color: var(--mi);
+            line-height: 1.8;
+            max-width: 480px;
+            margin: 0 auto 36px;
         }
 
         /* ─── FOOTER ─── */
         footer {
-            border-top: 1px solid var(--border);
-            padding: 32px 0;
-            background: var(--bg);
+            background: var(--ob2);
+            border-top: 1px solid rgba(148, 163, 184, 0.08);
+            padding: 48px 0 32px;
         }
 
-        .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 32px;
+        }
 
-        .footer-brand .logo-dark { font-size: 1rem; font-weight: 800; color: var(--navy); letter-spacing: -0.03em; }
-        .footer-brand .logo-dark span { color: var(--teal); }
-        .footer-brand p { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; }
+        .footer-brand-name {
+            font-family: 'Syne', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--wh);
+            letter-spacing: 0.14em;
+            margin-bottom: 4px;
+        }
 
-        .footer-contact a { font-size: 0.8rem; color: var(--text-sec); text-decoration: none; transition: color 0.2s; }
-        .footer-contact a:hover { color: var(--teal); }
+        .footer-powered {
+            font-size: 11px;
+            color: var(--az);
+            margin-bottom: 6px;
+        }
+
+        .footer-tagline {
+            font-size: 13px;
+            color: var(--mi);
+            font-style: italic;
+        }
+
+        .footer-contact {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .footer-contact a {
+            font-size: 14px;
+            color: var(--mi);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-contact a:hover { color: var(--az); }
+
+        .footer-bar {
+            border-top: 1px solid rgba(148, 163, 184, 0.08);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--mi);
+        }
+
+        /* ─── TOAST ─── */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            padding: 14px 24px;
+            background: var(--gr);
+            color: var(--ob);
+            font-family: 'Syne', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            z-index: 200;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* ─── MOBILE NAV ─── */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(10, 15, 30, 0.98);
+            z-index: 99;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .mobile-menu.open { display: flex; }
+
+        .mobile-menu a {
+            font-family: 'Syne', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--wh);
+            text-decoration: none;
+        }
 
         /* ─── RESPONSIVE ─── */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .nav-links { display: none; }
-            .hero-metric-strip { flex-wrap: wrap; gap: 20px; }
-            .compare-grid { grid-template-columns: 1fr; }
-            section { padding: 64px 0; }
+            .hamburger { display: flex; }
+
+            .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+            .grid-2 .order-mob-1 { order: -1; }
+
+            .solution-grid { grid-template-columns: 1fr; }
+            .systems-grid { grid-template-columns: 1fr; }
+
+            .timeline-grid { grid-template-columns: 1fr; gap: 32px; }
+            .timeline-grid::before { display: none; }
+            .timeline-dot { display: none; }
+            .timeline-num { opacity: 0.5; }
+
+            .stats-grid { grid-template-columns: 1fr; gap: 28px; }
+            .stat-item + .stat-item { border-left: none; border-top: 1px solid rgba(148,163,184,0.08); padding-top: 28px; }
+
+            .form-grid { grid-template-columns: 1fr; }
+            .form-card { padding: 32px 24px; }
+
+            .sec { padding: 72px 0; }
+            .closing { padding: 100px 0; }
+
+            .footer-main { flex-direction: column; gap: 24px; }
+            .footer-contact { text-align: left; }
         }
 
-        @media (max-width: 480px) {
-            .hero { padding: 120px 0 64px; }
+        @media (max-width: 600px) {
             .hero-ctas { flex-direction: column; }
-            .btn-lg { width: 100%; justify-content: center; text-align: center; }
-            .calc-row.highlight { margin: 0 -20px; padding: 14px 20px; }
-            .calc-body { padding: 20px; }
+            .hero-ctas .btn-az,
+            .hero-ctas .btn-az-outline { width: 100%; justify-content: center; text-align: center; }
+            .hero h1 { font-size: clamp(36px, 9vw, 52px); }
         }
     </style>
 </head>
 <body>
-
-    <!-- ─── STICKY NAV ─── -->
-    <nav>
-        <div class="container nav-inner">
-            <div class="logo">Par Level <span>AI</span></div>
-            <div class="nav-links">
-                <a href="#calculator">Savings Calculator</a>
-                <a href="#advantage">Advantage</a>
-                <a href="#portal">Verification</a>
-                <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" class="btn-audit btn-arrow" target="_blank" rel="noopener">Book Audit</a>
-            </div>
-            <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" class="btn-audit" target="_blank" rel="noopener" style="display:none" id="mobile-cta">Book Audit</a>
-        </div>
-    </nav>
-
-    <!-- ─── HERO ─── -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-inner">
-                <div class="hero-tag">ENTERPRISE PROCUREMENT INFRASTRUCTURE</div>
-                <h1>ERP-Integrated Procurement for National Nursing Home Groups.</h1>
-                <p class="hero-sub">Deploy a <strong>$500M supply chain infrastructure.</strong> Leverage 10+ years of manufacturing data to eliminate the <strong>18.5% &lsquo;Distributor Tax&rsquo;</strong>&mdash;at zero cost to your facility.</p>
-                <div class="hero-ctas">
-                    <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" class="btn-audit btn-lg btn-arrow" target="_blank" rel="noopener">Generate Your 48-Hour Spend Audit</a>
-                    <a href="#calculator" class="btn-audit btn-lg btn-outline-light">Run Savings Calculator</a>
-                </div>
-                <div class="hero-metric-strip">
-                    <div class="hero-metric">
-                        <div class="val">$500M</div>
-                        <div class="label">Infrastructure Scale</div>
-                    </div>
-                    <div class="hero-metric">
-                        <div class="val">18.5%</div>
-                        <div class="label">Avg. Distributor Tax Eliminated</div>
-                    </div>
-                    <div class="hero-metric">
-                        <div class="val">38+</div>
-                        <div class="label">Active MeddMax SKUs</div>
-                    </div>
-                    <div class="hero-metric">
-                        <div class="val">$0</div>
-                        <div class="label">Platform Cost</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── SAVINGS CALCULATOR ─── -->
-    <section class="bg-slate" id="calculator">
-        <div class="container center">
-            <div class="sec-label">Spend Recovery Engine</div>
-            <h2 class="sec-title">The Village NYC Savings Model</h2>
-            <p class="sec-desc">Interactive calculator built on 2025 benchmarks for NYC-based 100+ bed facilities. Baseline: <span class="mono" style="font-weight:600;">$10,476</span> annual spend per bed.</p>
-
-            <div class="calc-card">
-                <div class="calc-header">
-                    <h3>Annual Recovery Projection</h3>
-                    <div class="calc-badge">LIVE CALC</div>
-                </div>
-                <div class="calc-body">
-                    <div class="calc-slider-label">
-                        <span>Select Facility Bed Count</span>
-                        <span class="bed-val" id="bedDisplay">105</span>
-                    </div>
-                    <input type="range" id="bedSlider" min="50" max="500" value="105" step="5">
-
-                    <div class="calc-results">
-                        <div class="calc-row">
-                            <span class="label">Current Estimated Annual Spend</span>
-                            <span class="value" id="currentSpend">$1,099,980</span>
-                        </div>
-                        <div class="calc-row">
-                            <span class="label">Level 1 Recovery <span style="color:var(--text-muted);font-size:0.78rem">(Automation — 10%)</span></span>
-                            <span class="value" id="level1">−$109,998</span>
-                        </div>
-                        <div class="calc-row highlight">
-                            <span class="label">Level 2 Recovery <span style="font-size:0.78rem">(MeddMax Direct — 18.5%)</span></span>
-                            <span class="value" id="level2">−$203,497</span>
-                        </div>
-                    </div>
-                    <p class="calc-footnote">Data validated by 2025 benchmarks for NYC-based 100+ bed facilities. Per-bed cost: $10,476/year.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── UNFAIR ADVANTAGE ─── -->
-    <section class="bg-white" id="advantage">
-        <div class="container center">
-            <div class="sec-label">The Unfair Advantage</div>
-            <h2 class="sec-title">Traditional GPOs only negotiate. We execute.</h2>
-            <p class="sec-desc">Stop paying for contracts that don't include logistics, execution, or accountability.</p>
-
-            <div class="compare-grid">
-                <div class="compare-col">
-                    <div class="compare-col-head">Category</div>
-                    <div class="compare-col-body">
-                        <div class="compare-item">Pricing Model</div>
-                        <div class="compare-item">Cost to Facility</div>
-                        <div class="compare-item">Product Access</div>
-                        <div class="compare-item">Invoice Audit</div>
-                        <div class="compare-item">Staff Training</div>
-                    </div>
-                </div>
-                <div class="compare-col">
-                    <div class="compare-col-head">Traditional GPO</div>
-                    <div class="compare-col-body">
-                        <div class="compare-item">Contract-only tiers</div>
-                        <div class="compare-item">Membership + admin fees</div>
-                        <div class="compare-item">Distributor markup (18-32%)</div>
-                        <div class="compare-item">Manual AP review</div>
-                        <div class="compare-item">Required for new systems</div>
-                    </div>
-                </div>
-                <div class="compare-col pal">
-                    <div class="compare-col-head">Par Level AI</div>
-                    <div class="compare-col-body">
-                        <div class="compare-item"><span class="check">&#10003;</span> Manufacturer-direct</div>
-                        <div class="compare-item"><span class="check">&#10003;</span> $0 &mdash; earn from mfg. spreads</div>
-                        <div class="compare-item"><span class="check">&#10003;</span> MeddMax line at 0% markup</div>
-                        <div class="compare-item"><span class="check">&#10003;</span> 100-pt automated audit (15% more errors caught)</div>
-                        <div class="compare-item"><span class="check">&#10003;</span> Zero training &mdash; AI in existing portals</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── ANTI-GPO CALLOUT ─── -->
-    <div style="background:var(--navy);padding:44px 0;text-align:center;">
-        <div class="container">
-            <p style="font-size:clamp(1.1rem,2vw,1.4rem);font-weight:700;color:#fff;max-width:600px;margin:0 auto;letter-spacing:-0.01em;line-height:1.4;">
-                &ldquo;Stop paying for dashboards. We&rsquo;re performance-based&mdash;if we don&rsquo;t save you money, <span style="color:var(--gold);">we don&rsquo;t exist.</span>&rdquo;
-            </p>
-        </div>
-    </div>
-
-    <!-- ─── VERIFIED DISTRIBUTION PORTAL ─── -->
-    <section class="bg-slate" id="portal">
-        <div class="container center">
-            <div class="sec-label">Verified Distribution</div>
-            <h2 class="sec-title">Industry-Standard Integration: Verified Manufacturer Status.</h2>
-            <p class="sec-desc">Medd Max LLC is a verified manufacturer across McKesson and Medline distribution networks with 38+ active SKUs.</p>
-
-            <div class="portal-window">
-                <div class="portal-chrome">
-                    <div class="portal-dot r"></div>
-                    <div class="portal-dot y"></div>
-                    <div class="portal-dot g"></div>
-                    <div class="portal-url">connect.mckesson.com/portal/manufacturers/medd-max-llc</div>
-                </div>
-                <div class="portal-body">
-                    <div class="portal-header-row">
-                        <div class="portal-mfg">MANUFACTURER: MEDD MAX LLC</div>
-                        <div class="portal-status">VERIFIED &amp; ACTIVE</div>
-                    </div>
-                    <table class="portal-table">
-                        <thead>
-                            <tr>
-                                <th>SKU</th>
-                                <th>Product</th>
-                                <th>Category</th>
-                                <th>Tier</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>MMX-GLV-100</td>
-                                <td>MeddMax Exam Gloves (Nitrile, PF)</td>
-                                <td>Medical</td>
-                                <td>National</td>
-                            </tr>
-                            <tr>
-                                <td>MMX-LNR-330</td>
-                                <td>MeddMax High-Density Liners 33gal</td>
-                                <td>Janitorial</td>
-                                <td>National</td>
-                            </tr>
-                            <tr>
-                                <td>MMX-INC-200</td>
-                                <td>MeddMax Premium Incontinence Brief</td>
-                                <td>Incontinence</td>
-                                <td>National</td>
-                            </tr>
-                            <tr>
-                                <td>MMX-LIN-180</td>
-                                <td>MeddMax Institutional Flat Sheet</td>
-                                <td>Linens</td>
-                                <td>National</td>
-                            </tr>
-                            <tr>
-                                <td>MMX-LNR-450</td>
-                                <td>MeddMax HD Liners 45gal</td>
-                                <td>Janitorial</td>
-                                <td>National</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p class="portal-footer-note">Showing 5 of 38+ active SKUs &middot; Distribution via McKesson &amp; Medline</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── COST OF INACTION ─── -->
-    <section class="inaction-section">
-        <div class="container">
-            <div class="sec-label" style="color:var(--gold);">Cost of Inaction</div>
-            <div class="inaction-amount">$7,000+</div>
-            <h2>lost per 100 beds, every month you wait.</h2>
-            <p class="sub">Every invoice processed at distributor markup is margin you're handing away. The recovery starts the day we deploy.</p>
-            <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" class="btn-audit btn-lg btn-arrow" target="_blank" rel="noopener">Schedule Your Line-Item Audit</a>
-            <p class="req">Upload your last 3 McKesson/Medline invoices. We provide a 1:1 price comparison using our $500M manufacturing tiers.</p>
-        </div>
-    </section>
-
-    <!-- ─── FOOTER ─── -->
-    <footer>
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <div class="logo-dark">Par Level <span>AI</span></div>
-                <p>&copy; 2026 Par Level AI &middot; A MeddMax Company</p>
-            </div>
-            <div class="footer-contact">
-                <a href="mailto:david@meddmax.com">david@meddmax.com</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ─── CALCULATOR JS ─── -->
-    <script>
-        const slider = document.getElementById('bedSlider');
-        const bedDisplay = document.getElementById('bedDisplay');
-        const currentSpend = document.getElementById('currentSpend');
-        const level1 = document.getElementById('level1');
-        const level2 = document.getElementById('level2');
-        const PPB = 10476;
-
-        function fmt(n) {
-            return '$' + Math.round(n).toLocaleString('en-US');
-        }
-
-        function update() {
-            const beds = parseInt(slider.value);
-            const spend = beds * PPB;
-            const l1 = spend * 0.10;
-            const l2 = spend * 0.185;
-            bedDisplay.textContent = beds;
-            currentSpend.textContent = fmt(spend);
-            level1.textContent = '\u2212' + fmt(l1);
-            level2.textContent = '\u2212' + fmt(l2);
-        }
-
-        slider.addEventListener('input', update);
-        update();
-
-        // Show mobile CTA
-        if (window.innerWidth <= 768) {
-            document.getElementById('mobile-cta').style.display = 'inline-flex';
-        }
-    </script>
-
-    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
