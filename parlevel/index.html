@@ -926,5 +926,491 @@
     </style>
 </head>
 <body>
+
+    <!-- ─── NAV ─── -->
+    <nav id="nav">
+        <div class="container nav-inner">
+            <div class="nav-brand">
+                <a href="#" class="nav-logo">PAR LEVEL AI</a>
+                <span class="nav-powered">Powered by MeddMax LLC</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#platform">Platform</a></li>
+                <li><a href="#reporting">Reporting</a></li>
+                <li><a href="#analysis" class="btn-az">Request Spend Analysis</a></li>
+            </ul>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ─── MOBILE MENU ─── -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#how-it-works" onclick="closeMobile()">How It Works</a>
+        <a href="#platform" onclick="closeMobile()">Platform</a>
+        <a href="#reporting" onclick="closeMobile()">Reporting</a>
+        <a href="#analysis" class="btn-az btn-az-lg" onclick="closeMobile()">Request Spend Analysis</a>
+    </div>
+
+    <!-- ─── HERO ─── -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-rule hero-anim hero-anim-1"></div>
+                <p class="hero-label hero-anim hero-anim-2">FOR HEALTHCARE FACILITY OWNERS &amp; CFOs</p>
+                <h1 class="hero-anim hero-anim-3">Managed Procurement<br>for Healthcare <span class="az">Facilities.</span></h1>
+                <p class="hero-sub hero-anim hero-anim-4">Free to the Facility. Funded by Volume.</p>
+                <div class="hero-ctas hero-anim hero-anim-5">
+                    <a href="#analysis" class="btn-az btn-az-lg">Request Your Spend Analysis &rarr;</a>
+                    <a href="#how-it-works" class="btn-az btn-az-lg btn-az-outline">How It Works &darr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator hero-anim hero-anim-5">
+            <span>SCROLL</span>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <!-- ─── STATS BAR ─── -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-num" data-count="8" data-suffix="+">0</div>
+                    <div class="stat-label">Years Managing Facility Purchasing</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-1">
+                    <div class="stat-num" data-count="45">0</div>
+                    <div class="stat-label">Proprietary SKUs Ready to Deploy</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-2">
+                    <div class="stat-num" data-count="0" data-prefix="$">$0</div>
+                    <div class="stat-label">Cost to Your Facility. Always.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── THE PROBLEM ─── -->
+    <section class="sec sec-wh">
+        <div class="container">
+            <div class="grid-2">
+                <div class="reveal">
+                    <div class="sec-label"><span class="sec-label-rule"></span> THE PROBLEM</div>
+                    <h2 class="sec-title" style="color:var(--ob);">6 vendors.<br>12 invoices.<br>Zero leverage.</h2>
+                    <p class="sec-desc">The average healthcare facility manages more than six separate supply vendors — each with different pricing, contacts, and payment terms. The result: administrative burden, zero volume leverage, and spend data that arrives after it's already too late to act.</p>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="img-container">
+                        <img src="images/desk-flatlay.png" alt="Healthcare facility procurement desk with invoices and supplies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="placeholder-text" style="display:none;">desk-flatlay.png — Procurement desk photo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── THE SOLUTION ─── -->
+    <section class="sec sec-ob2">
+        <div class="container" style="text-align:center;">
+            <div class="sec-label reveal" style="justify-content:center;"><span class="sec-label-rule"></span> THE SOLUTION</div>
+            <h2 class="sec-title sec-title-sm reveal reveal-delay-1" style="margin:0 auto 16px;max-width:640px;">A full purchasing department. At zero cost.</h2>
+            <p class="sec-desc reveal reveal-delay-2" style="margin:0 auto 56px;text-align:center;max-width:560px;font-style:italic;">Our team takes over. Our pricing goes to work. The facility pays nothing.</p>
+
+            <div class="solution-grid reveal reveal-delay-3">
+                <div class="solution-card">
+                    <div class="solution-num">01</div>
+                    <h3>AI-Powered Spend Analysis</h3>
+                    <p>We analyze your facility's purchasing history line by line — identifying pricing gaps, redundant vendors, and categories where volume leverage is being left on the table.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-num">02</div>
+                    <h3>Negotiated Pricing Deployed Immediately</h3>
+                    <p>Our volume relationships with major distributors like McKesson and Medline mean your facility gets pricing typically reserved for large hospital networks — from day one.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-num">03</div>
+                    <h3>Complete Procurement Management</h3>
+                    <p>We handle every PO, reorder, formulary update, and vendor call. Your team orders what they need — we manage everything behind the scenes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── HOW IT WORKS ─── -->
+    <section class="sec sec-ob" id="how-it-works">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:56px;">
+                <div class="sec-label reveal" style="justify-content:center;"><span class="sec-label-rule"></span> THE MODEL</div>
+                <h2 class="sec-title sec-title-sm reveal reveal-delay-1" style="margin:0 auto;">How Par Level AI Works</h2>
+            </div>
+
+            <div class="timeline-grid reveal reveal-delay-2">
+                <div class="timeline-step">
+                    <div class="timeline-num">01</div>
+                    <div class="timeline-dot"></div>
+                    <h4>Spend Analysis</h4>
+                    <p>We analyze 12 months of your purchasing history — every vendor, every line item, every price point.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-num">02</div>
+                    <div class="timeline-dot"></div>
+                    <h4>Agreement</h4>
+                    <p>You sign a zero-cost management agreement. No fees. Ever.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-num">03</div>
+                    <div class="timeline-dot"></div>
+                    <h4>Platform Setup</h4>
+                    <p>We open and fund your OnCare account. Full formulary loaded.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-num">04</div>
+                    <div class="timeline-dot"></div>
+                    <h4>We Manage</h4>
+                    <p>Every PO, reorder, and vendor call handled by our team.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-num">05</div>
+                    <div class="timeline-dot"></div>
+                    <h4>PPD Report</h4>
+                    <p>Monthly reporting on spend, per patient day, trends, and savings.</p>
+                </div>
+            </div>
+
+            <div class="timeline-banner reveal">
+                <p>No cost. &nbsp;&nbsp; No risk. &nbsp;&nbsp; No disruption.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── THE PLATFORM ─── -->
+    <section class="sec sec-ob2" id="platform">
+        <div class="container">
+            <div class="grid-2">
+                <div class="reveal">
+                    <div class="sec-label"><span class="sec-label-rule"></span> THE PLATFORM</div>
+                    <h2 class="sec-title sec-title-sm">We open it.<br>We run it.<br>You order.</h2>
+                    <ul class="bullet-list">
+                        <li>We open and fund an OnCare ordering account on your behalf — at no cost to your facility.</li>
+                        <li>We configure every SKU, par level, and department access. Your team never touches the system.</li>
+                        <li>Director of Nursing gets Medical &amp; Clinical. Dietary gets Food Service. Housekeeping gets Janitorial.</li>
+                    </ul>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="img-container img-container-wide">
+                        <img src="images/ipad-dashboard.png" alt="Par Level AI ordering dashboard on iPad" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="placeholder-text" style="display:none;">ipad-dashboard.png — Ordering platform screenshot</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── SAVINGS ANALYSIS FORM ─── -->
+    <section class="sec sec-ob" id="analysis">
+        <div class="container">
+            <div class="grid-2">
+                <div class="reveal">
+                    <div class="sec-label"><span class="sec-label-rule"></span> YOUR SAVINGS ANALYSIS</div>
+                    <h2 class="sec-title sec-title-sm">See exactly what you <span class="az">save.</span></h2>
+                    <p class="sec-desc" style="font-style:italic;">Before you commit to anything.</p>
+                    <div class="benefit-rows">
+                        <div class="benefit-row">Immediate savings from Day 1 — our pricing is better than what you're paying now</div>
+                        <div class="benefit-row">One organized system replacing 6–12 separate vendor relationships</div>
+                        <div class="benefit-row">Automated reorders — nothing falls through the cracks</div>
+                        <div class="benefit-row">Full spend visibility by category, by department, by month</div>
+                        <div class="benefit-row">Right product, right amount, right time — always</div>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="form-card">
+                        <h3>Request Your Free Spend Analysis</h3>
+                        <form id="auditForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                            <div class="form-grid">
+                                <div class="form-field">
+                                    <label>First Name</label>
+                                    <input type="text" name="first_name" required placeholder="Jane">
+                                </div>
+                                <div class="form-field">
+                                    <label>Last Name</label>
+                                    <input type="text" name="last_name" required placeholder="Smith">
+                                </div>
+                                <div class="form-field form-full">
+                                    <label>Facility Name</label>
+                                    <input type="text" name="facility" required placeholder="Sunrise Healthcare Center">
+                                </div>
+                                <div class="form-field">
+                                    <label>Your Title</label>
+                                    <input type="text" name="title" placeholder="Administrator">
+                                </div>
+                                <div class="form-field">
+                                    <label>Number of Beds</label>
+                                    <select name="beds" required>
+                                        <option value="" disabled selected>Select</option>
+                                        <option value="1-50">1–50</option>
+                                        <option value="51-100">51–100</option>
+                                        <option value="101-200">101–200</option>
+                                        <option value="201-300">201–300</option>
+                                        <option value="300+">300+</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Est. Monthly Spend</label>
+                                    <select name="monthly_spend">
+                                        <option value="" disabled selected>Select</option>
+                                        <option value="Under $5K">Under $5K</option>
+                                        <option value="$5K-$15K">$5K–$15K</option>
+                                        <option value="$15K-$40K">$15K–$40K</option>
+                                        <option value="$40K-$100K">$40K–$100K</option>
+                                        <option value="$100K+">$100K+</option>
+                                    </select>
+                                </div>
+                                <div class="form-field"></div>
+                                <div class="form-field">
+                                    <label>Email</label>
+                                    <input type="email" name="email" required placeholder="jane@facility.com">
+                                </div>
+                                <div class="form-field">
+                                    <label>Phone</label>
+                                    <input type="tel" name="phone" placeholder="(555) 555-5555">
+                                </div>
+                                <div class="form-field form-full">
+                                    <label>Message (optional)</label>
+                                    <textarea name="message" placeholder="Tell us about your current procurement setup..."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-submit">
+                                <button type="submit" class="btn-az" id="submitBtn">Request Free Analysis &rarr;</button>
+                            </div>
+                            <p class="form-note">We'll reach out within one business day. No obligation.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── PPD REPORTING ─── -->
+    <section class="sec sec-ob2" id="reporting">
+        <div class="container">
+            <div class="grid-2">
+                <div class="reveal">
+                    <div class="sec-label"><span class="sec-label-rule"></span> MONTHLY PPD REPORTING</div>
+                    <h2 class="sec-title sec-title-xs">Per Patient Day.<br>Every month.<br>Beautifully clear.</h2>
+                    <div class="report-rows">
+                        <div class="report-row">
+                            <h4>Total Supply Spend by Category</h4>
+                            <p>Medical, Dietary, Janitorial, Office — every dollar accounted for</p>
+                        </div>
+                        <div class="report-row">
+                            <h4>Per Patient Day vs. Census</h4>
+                            <p>The metric every CFO and regional director tracks</p>
+                        </div>
+                        <div class="report-row">
+                            <h4>Month-over-Month Trend</h4>
+                            <p>Which category moved and exactly why</p>
+                        </div>
+                        <div class="report-row">
+                            <h4>Category Deep Dive</h4>
+                            <p>Top 10 items by spend — quantity, unit cost, trend</p>
+                        </div>
+                        <div class="report-row">
+                            <h4>Savings vs. Prior Period</h4>
+                            <p>Dollar savings versus what you paid before Par Level AI</p>
+                        </div>
+                        <div class="report-row">
+                            <h4>Formulary Compliance</h4>
+                            <p>All required items ordered? Any critical gaps?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="img-container">
+                        <img src="images/spend-chart.png" alt="Monthly PPD spend analysis chart" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="placeholder-text" style="display:none;">spend-chart.png — PPD reporting chart</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── SIX SYSTEMS ─── -->
+    <section class="sec sec-ob">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:56px;">
+                <div class="sec-label reveal" style="justify-content:center;"><span class="sec-label-rule"></span> WHAT WE PUT IN PLACE FOR YOU</div>
+                <h2 class="sec-title sec-title-sm reveal reveal-delay-1" style="margin:0 auto;">Six systems. Zero waste.</h2>
+            </div>
+
+            <div class="systems-grid reveal reveal-delay-2">
+                <div class="system-card">
+                    <div class="system-num">01</div>
+                    <h4>Automated Par Level Triggers</h4>
+                    <div class="system-rule"></div>
+                    <p>Every item has a minimum stock threshold. When inventory approaches that level, we reorder automatically. Emergency purchases disappear.</p>
+                </div>
+                <div class="system-card">
+                    <div class="system-num">02</div>
+                    <h4>Formulary Discipline</h4>
+                    <div class="system-rule"></div>
+                    <p>Each department limited to approved items in approved quantities. No rogue orders. No duplicate purchasing.</p>
+                </div>
+                <div class="system-card">
+                    <div class="system-num">03</div>
+                    <h4>Monthly Spend Controls</h4>
+                    <div class="system-rule"></div>
+                    <p>We track spend by category, department, and item. We flag overage before the bill arrives.</p>
+                </div>
+                <div class="system-card">
+                    <div class="system-num">04</div>
+                    <h4>Right Quantity, Every Time</h4>
+                    <div class="system-rule"></div>
+                    <p>Over-purchasing is one of the biggest sources of waste. We right-size every order based on census and usage data.</p>
+                </div>
+                <div class="system-card">
+                    <div class="system-num">05</div>
+                    <h4>One Invoice</h4>
+                    <div class="system-rule"></div>
+                    <p>Instead of reconciling 6–12 invoices monthly, your AP team sees one clean monthly statement.</p>
+                </div>
+                <div class="system-card">
+                    <div class="system-num">06</div>
+                    <h4>Savings Locked In</h4>
+                    <div class="system-rule"></div>
+                    <p>Our negotiated pricing doesn't expire. Every order runs through our pricing relationships. The savings compound.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── CLOSING ─── -->
+    <section class="closing sec-ob">
+        <div class="container">
+            <div class="closing-stack reveal">
+                Better pricing.<br>
+                Smarter systems.<br>
+                Monthly clarity.<br>
+                <span class="az">$0 to your facility.</span>
+            </div>
+            <div class="closing-rule reveal reveal-delay-1"></div>
+            <p class="closing-text reveal reveal-delay-2">Let us run your spend analysis.<br>See exactly what you save — before you commit to anything.</p>
+            <div class="reveal reveal-delay-3" style="text-align:center;">
+                <a href="#analysis" class="btn-az btn-az-lg">Request Your Free Analysis &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="container">
+            <div class="footer-main">
+                <div>
+                    <div class="footer-brand-name">PAR LEVEL AI</div>
+                    <div class="footer-powered">Powered by MeddMax LLC</div>
+                    <div class="footer-tagline">Managed Procurement for Healthcare Facilities</div>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:david@meddmax.com">david@meddmax.com</a>
+                    <a href="tel:+16466444641">646-644-4641</a>
+                    <a href="https://meddmax.com" target="_blank" rel="noopener">meddmax.com</a>
+                </div>
+            </div>
+            <div class="footer-bar">
+                <span>&copy; 2026 Par Level AI. A MeddMax LLC company.</span>
+                <span>Edison, NJ &middot; Serving healthcare facilities nationwide</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ─── TOAST ─── -->
+    <div class="toast" id="toast">Analysis request sent successfully.</div>
+
+    <!-- ─── JAVASCRIPT ─── -->
+    <script>
+        // Nav scroll
+        window.addEventListener('scroll', function() {
+            document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        // Smooth scroll with offset
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Scroll reveal
+        var revealObs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(function(el) { revealObs.observe(el); });
+
+        // Stat counters
+        var counterObs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var el = entry.target;
+                    var target = parseInt(el.getAttribute('data-count'));
+                    var prefix = el.getAttribute('data-prefix') || '';
+                    var suffix = el.getAttribute('data-suffix') || '';
+                    if (target === 0) { el.textContent = prefix + '0' + suffix; counterObs.unobserve(el); return; }
+                    var current = 0;
+                    var step = Math.ceil(target / 40);
+                    var timer = setInterval(function() {
+                        current += step;
+                        if (current >= target) { current = target; clearInterval(timer); }
+                        el.textContent = prefix + current + suffix;
+                    }, 35);
+                    counterObs.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-num[data-count]').forEach(function(el) { counterObs.observe(el); });
+
+        // Form submit
+        document.getElementById('auditForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var btn = document.getElementById('submitBtn');
+            var data = new FormData(form);
+            fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+                .then(function(res) {
+                    if (res.ok) {
+                        form.reset();
+                        btn.textContent = 'Sent \u2713';
+                        btn.style.background = '#059669';
+                        var toast = document.getElementById('toast');
+                        toast.classList.add('show');
+                        setTimeout(function() { toast.classList.remove('show'); }, 5000);
+                    }
+                });
+        });
+
+        // Mobile hamburger
+        document.getElementById('hamburgerBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        });
+
+        function closeMobile() {
+            document.getElementById('mobileMenu').classList.remove('open');
+        }
+    </script>
+
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
