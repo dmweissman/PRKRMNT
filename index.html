@@ -233,7 +233,7 @@
         }
 
         /* ─── SECTIONS ─── */
-        section { padding: 100px 0; }
+        section { padding: 120px 0; }
 
         .section-label {
             display: inline-flex;
@@ -274,21 +274,29 @@
         /* ─── PROBLEM CARDS ─── */
         .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto auto;
             gap: 16px;
         }
 
+        .problem-grid .problem-card:nth-child(1) { grid-column: span 2; }
+        .problem-grid .problem-card:nth-child(2) { grid-column: span 2; }
+        .problem-grid .problem-card:nth-child(3) { grid-column: span 2; }
+        .problem-grid .problem-card:nth-child(4) { grid-column: span 2; }
+
         .problem-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
             padding: 32px 28px;
             transition: all 0.3s ease;
         }
 
         .problem-card:hover {
-            background: var(--bg-card-hover);
-            border-color: #2a2a2a;
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
             transform: translateY(-2px);
         }
 
@@ -328,16 +336,24 @@
 
         .advantage-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
             margin-bottom: 72px;
         }
 
         .advantage-item {
-            padding: 28px;
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            background: var(--bg);
+            padding: 32px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .advantage-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
         }
 
         .advantage-item h4 {
@@ -433,9 +449,11 @@
         .pricing-card {
             max-width: 680px;
             margin: 0 auto;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
             padding: 56px 48px;
             text-align: center;
             position: relative;
@@ -567,6 +585,19 @@
             .stat-item { border-bottom: 1px solid var(--border); padding-bottom: 28px; }
             .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
 
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-grid .problem-card:nth-child(1),
+            .problem-grid .problem-card:nth-child(2),
+            .problem-grid .problem-card:nth-child(3),
+            .problem-grid .problem-card:nth-child(4) { grid-column: span 1; }
+
+            .advantage-grid {
+                grid-template-columns: 1fr;
+            }
+
             .process-flow {
                 grid-template-columns: 1fr;
                 gap: 32px;
@@ -582,7 +613,7 @@
                 padding: 40px 28px;
             }
 
-            section { padding: 72px 0; }
+            section { padding: 80px 0; }
         }
 
         @media (max-width: 480px) {
