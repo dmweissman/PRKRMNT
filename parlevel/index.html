@@ -974,8 +974,7 @@
         (function() {
             var slider = document.getElementById('bedSlider');
             var display = document.getElementById('bedDisplay');
-            // PPD per bed per day (national benchmarks)
-            var ppd = { inc: 1.50, ppe: 1.20, lin: 0.55, die: 0.95, lnr: 0.60, jan: 0.48 };
+            var ppd = { inc: 1.15, ppe: 0.45, lin: 0.18, die: 3.20, lnr: 0.22, jan: 0.35 };
             var els = {
                 inc: document.getElementById('cat-inc'),
                 ppe: document.getElementById('cat-ppe'),
@@ -986,20 +985,19 @@
             };
             var totalEl = document.getElementById('totalSpend');
             var savEl = document.getElementById('totalSavings');
-
-            function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+            var nf = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 
             function update() {
                 var beds = parseInt(slider.value);
                 display.textContent = beds;
                 var total = 0;
                 for (var k in ppd) {
-                    var val = beds * ppd[k] * 30;
-                    els[k].textContent = fmt(val);
+                    var val = beds * ppd[k] * 30.4;
+                    els[k].textContent = nf.format(val);
                     total += val;
                 }
-                totalEl.textContent = fmt(total);
-                savEl.textContent = fmt(total * 0.18);
+                totalEl.textContent = nf.format(total);
+                savEl.textContent = nf.format(total * 0.18);
             }
 
             slider.addEventListener('input', update);
