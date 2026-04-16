@@ -86,12 +86,21 @@
 
         .nav-inner { display: flex; align-items: center; justify-content: space-between; }
 
-        .nav-brand { display: flex; flex-direction: column; }
-        .nav-logo {
-            font-size: 15px; font-weight: 600; color: var(--text);
-            letter-spacing: 0.06em; text-decoration: none;
+        .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .nav-logo-icon {
+            width: 32px; height: 32px; flex-shrink: 0;
         }
-        .nav-powered { font-size: 10px; color: var(--blue); margin-top: 1px; }
+        .nav-logo-text {
+            display: flex; flex-direction: column;
+        }
+        .nav-wordmark {
+            font-size: 14px; font-weight: 700; color: var(--text);
+            letter-spacing: 0.12em; text-decoration: none; line-height: 1.2;
+        }
+        .nav-powered {
+            font-size: 9px; color: var(--text-secondary); letter-spacing: 0.04em;
+            margin-top: 1px; font-weight: 500;
+        }
 
         .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
         .nav-links a {
@@ -568,10 +577,19 @@
     <!-- ─── NAV ─── -->
     <nav id="nav">
         <div class="container nav-inner">
-            <div class="nav-brand">
-                <a href="#" class="nav-logo">PAR LEVEL AI</a>
-                <span class="nav-powered">Powered by MeddMax LLC</span>
-            </div>
+            <a href="#" class="nav-brand">
+                <svg class="nav-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 2L36 10v12c0 9.6-6.8 16.4-16 18-9.2-1.6-16-8.4-16-18V10L20 2z" fill="#0A1628"/>
+                    <rect x="12" y="22" width="4" height="8" rx="1" fill="#0071E3" opacity="0.5"/>
+                    <rect x="18" y="18" width="4" height="12" rx="1" fill="#0071E3" opacity="0.7"/>
+                    <rect x="24" y="14" width="4" height="16" rx="1" fill="#0071E3"/>
+                    <path d="M14 20h14" stroke="#fff" stroke-width="0.5" opacity="0.2"/>
+                </svg>
+                <div class="nav-logo-text">
+                    <span class="nav-wordmark">PARLEVEL AI</span>
+                    <span class="nav-powered">by MeddMax LLC</span>
+                </div>
+            </a>
             <ul class="nav-links">
                 <li><a href="#how-it-works">Implementation</a></li>
                 <li><a href="#platform">Platform</a></li>
@@ -970,8 +988,16 @@
         <div class="container">
             <div class="footer-main">
                 <div>
-                    <div class="footer-brand-name">PAR LEVEL AI</div>
-                    <div class="footer-powered">Powered by MeddMax LLC</div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+                        <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 2L36 10v12c0 9.6-6.8 16.4-16 18-9.2-1.6-16-8.4-16-18V10L20 2z" fill="#0A1628"/>
+                            <rect x="12" y="22" width="4" height="8" rx="1" fill="#0071E3" opacity="0.5"/>
+                            <rect x="18" y="18" width="4" height="12" rx="1" fill="#0071E3" opacity="0.7"/>
+                            <rect x="24" y="14" width="4" height="16" rx="1" fill="#0071E3"/>
+                        </svg>
+                        <div class="footer-brand-name">PARLEVEL AI</div>
+                    </div>
+                    <div class="footer-powered" style="color:var(--text-secondary);">by MeddMax LLC</div>
                     <div class="footer-tagline">Managed Procurement for Healthcare Facilities</div>
                 </div>
                 <div class="footer-contact">
