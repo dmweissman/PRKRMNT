@@ -425,6 +425,29 @@
             .kg-grid { grid-template-columns: 1fr; }
         }
 
+        /* ─── FOOTER DIRECTORY ─── */
+        .footer-dir {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 32px; padding-bottom: 40px; margin-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+        .footer-dir h4 {
+            font-size: 11px; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.1em; color: var(--text); margin-bottom: 16px;
+        }
+        .footer-dir ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .footer-dir ul li a {
+            font-size: 13px; color: var(--text-secondary);
+            text-decoration: none; transition: color 0.3s ease-in-out;
+        }
+        .footer-dir ul li a:hover { color: var(--blue); }
+        @media (max-width: 900px) {
+            .footer-dir { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .footer-dir { grid-template-columns: 1fr; gap: 28px; }
+        }
+
         /* ─── FOOTER ─── */
         footer { background: var(--bg-alt); padding: 48px 0 32px; }
         .footer-main { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; }
@@ -843,6 +866,40 @@
     <!-- ─── FOOTER ─── -->
     <footer>
         <div class="container">
+            <nav class="footer-dir" aria-label="Semantic Directory">
+                <div>
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="#analysis">National Account Pricing</a></li>
+                        <li><a href="#savings-slider">Par-Level Automation</a></li>
+                        <li><a href="#reporting">PPD Reporting AI</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Integrations</h4>
+                    <ul>
+                        <li><a href="#platform">Medline Portal Sync</a></li>
+                        <li><a href="#platform">McKesson Supply Manager</a></li>
+                        <li><a href="#platform">Twin Med Distribution</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#savings-slider">Incontinence Management</a></li>
+                        <li><a href="#savings-slider">Enteral Nutrition Supply</a></li>
+                        <li><a href="#savings-slider">SNF Janitorial Logistics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#analysis">Request Spend Analysis</a></li>
+                        <li><a href="mailto:david@meddmax.com">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
             <div class="footer-main">
                 <div>
                     <div class="footer-brand-name">PAR LEVEL AI</div>
