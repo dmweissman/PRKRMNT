@@ -492,28 +492,50 @@
         @media (max-width: 900px) {
             .nav-links { display: none; }
             .hamburger { display: flex; }
-            .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+            .grid-2 { grid-template-columns: 1fr; gap: 32px; }
             .solution-grid, .systems-grid { grid-template-columns: 1fr; }
             .bento-grid { grid-template-columns: 1fr; }
-            .timeline-grid { grid-template-columns: 1fr; gap: 32px; }
+            .timeline-grid { grid-template-columns: 1fr; gap: 24px; }
             .timeline-grid::before { display: none; }
             .timeline-dot { display: none; }
-            .stats-grid { grid-template-columns: 1fr; gap: 32px; }
+            .stats-grid { grid-template-columns: 1fr; gap: 24px; }
             .form-grid { grid-template-columns: 1fr; }
-            .form-card { padding: 32px 24px; }
-            .sec { padding: 96px 0; }
-            .closing { padding: 120px 0; }
-            .footer-main { flex-direction: column; gap: 24px; }
+            .form-card { padding: 28px 20px; }
+            .sec { padding: 64px 0; }
+            .sec-title { font-size: 28px; margin-bottom: 12px; }
+            .sec-desc { font-size: 15px; margin-bottom: 32px; }
+            .sec-label { margin-bottom: 8px; }
+            .stats-section { padding: 48px 0; }
+            .quote-section { padding: 64px 0; }
+            .quote-border { padding: 32px 24px; }
+            .quote-text { font-size: 17px; }
+            .closing { padding: 72px 0; }
+            .closing-stack { font-size: 32px; margin-bottom: 24px; }
+            .closing-text { font-size: 16px; margin-bottom: 24px; }
+            .closing-rule { margin-bottom: 24px; }
+            .footer-main { flex-direction: column; gap: 20px; }
             .footer-contact { text-align: left; }
-
+            .benefit-rows { gap: 8px; }
+            .benefit-row { padding: 12px 14px; font-size: 14px; }
+            .report-row { padding: 14px 0; }
+            .system-card { padding: 28px 20px; }
+            .solution-card { padding: 28px 20px; }
+            .bento-card { padding: 28px 20px; }
+            .bullet-list { gap: 12px; }
+            .bullet-list li { font-size: 15px; }
+            .timeline-banner { margin-top: 32px; }
         }
 
         @media (max-width: 600px) {
-            .hero { padding: 160px 0 100px; }
-            .hero-ctas { flex-direction: column; }
+            .hero { padding: 120px 0 64px; }
+            .hero h1 { font-size: clamp(32px, 9vw, 44px); margin-bottom: 12px; }
+            .hero-sub { font-size: 16px; margin-bottom: 28px; }
+            .hero-ctas { flex-direction: column; gap: 12px; }
             .btn-primary { width: 100%; justify-content: center; }
-            .hero h1 { font-size: clamp(36px, 10vw, 48px); }
-            body { font-size: 17px; }
+            body { font-size: 16px; }
+            .stat-num { font-size: 40px; }
+            .stat-label { font-size: 11px; }
+            .container { padding: 0 20px; }
         }
     </style>
 </head>
