@@ -439,6 +439,30 @@
             line-height: 1.5; max-width: 400px; margin: 0 auto 36px;
         }
 
+        /* ─── DASHBOARD MOCKUPS ─── */
+        .mock-dash {
+            width: 100%; height: 100%; padding: 24px;
+            display: flex; flex-direction: column; gap: 16px;
+            font-family: 'Inter', sans-serif;
+        }
+        .mock-topbar { display: flex; justify-content: space-between; align-items: center; }
+        .mock-topbar .title { font-size: 13px; font-weight: 600; color: var(--text); }
+        .mock-topbar .badge { font-size: 9px; font-weight: 700; color: var(--blue); background: rgba(0,113,227,0.08); padding: 3px 8px; border-radius: 4px; letter-spacing: 0.04em; }
+        .mock-row { display: flex; gap: 12px; flex: 1; }
+        .mock-card {
+            flex: 1; background: var(--bg); border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 10px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .mock-card .mc-label { font-size: 10px; color: var(--text-secondary); font-weight: 500; margin-bottom: 4px; }
+        .mock-card .mc-val { font-size: 18px; font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+        .mock-card .mc-sub { font-size: 9px; color: var(--green); font-weight: 600; margin-top: 2px; }
+        .mock-bar-group { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+        .mock-bar-row { display: flex; align-items: center; gap: 8px; }
+        .mock-bar-label { font-size: 9px; color: var(--text-secondary); width: 56px; text-align: right; }
+        .mock-bar-track { flex: 1; height: 6px; background: rgba(0,0,0,0.04); border-radius: 100px; overflow: hidden; }
+        .mock-bar-fill { height: 100%; border-radius: 100px; background: var(--blue); }
+        .mock-bar-fill.green { background: var(--green); }
+
         /* ─── KNOWLEDGE GRAPH (hidden visually, accessible to crawlers) ─── */
         .kg-section {
             position: absolute; width: 1px; height: 1px;
@@ -708,9 +732,39 @@
                     </ul>
                 </div>
                 <div class="reveal reveal-delay-2">
-                    <div class="img-container img-container-wide">
-                        <img src="images/ipad-dashboard.png" alt="Par Level AI ordering dashboard on iPad" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                        <div class="placeholder-text" style="display:none;">ipad-dashboard.png — Ordering platform screenshot</div>
+                    <div class="img-container img-container-wide" role="img" aria-label="Par Level AI procurement dashboard showing department ordering, spend tracking, and inventory status">
+                        <div class="mock-dash">
+                            <div class="mock-topbar">
+                                <span class="title">Par Level AI — Procurement Dashboard</span>
+                                <span class="badge">LIVE</span>
+                            </div>
+                            <div class="mock-row">
+                                <div class="mock-card">
+                                    <span class="mc-label">Monthly Spend</span>
+                                    <span class="mc-val">$18,420</span>
+                                    <span class="mc-sub">↓ 22% vs. prior</span>
+                                </div>
+                                <div class="mock-card">
+                                    <span class="mc-label">Active SKUs</span>
+                                    <span class="mc-val">342</span>
+                                    <span class="mc-sub">All departments</span>
+                                </div>
+                                <div class="mock-card">
+                                    <span class="mc-label">PPD</span>
+                                    <span class="mc-val">$5.28</span>
+                                    <span class="mc-sub">↓ $1.40 saved</span>
+                                </div>
+                            </div>
+                            <div class="mock-card" style="flex:0;">
+                                <span class="mc-label">Department Ordering Status</span>
+                                <div class="mock-bar-group">
+                                    <div class="mock-bar-row"><span class="mock-bar-label">Medical</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:85%"></div></div></div>
+                                    <div class="mock-bar-row"><span class="mock-bar-label">Dietary</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:72%"></div></div></div>
+                                    <div class="mock-bar-row"><span class="mock-bar-label">Janitorial</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:60%"></div></div></div>
+                                    <div class="mock-bar-row"><span class="mock-bar-label">Linens</span><div class="mock-bar-track"><div class="mock-bar-fill green" style="width:95%"></div></div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -817,9 +871,35 @@
                     </div>
                 </div>
                 <div class="reveal reveal-delay-2">
-                    <div class="img-container">
-                        <img src="images/spend-chart.png" alt="Monthly PPD spend analysis chart" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                        <div class="placeholder-text" style="display:none;">PPD Report — Incontinence $4,210 · PPE $3,890 · Can Liners $1,640 · Dietary $2,950 · Linens $1,820</div>
+                    <div class="img-container" role="img" aria-label="Monthly PPD report showing spend by category: Incontinence, PPE, Dietary, Can Liners, Linens with savings trends">
+                        <div class="mock-dash">
+                            <div class="mock-topbar">
+                                <span class="title">Monthly PPD Report — April 2026</span>
+                                <span class="badge">GENERATED</span>
+                            </div>
+                            <div class="mock-row">
+                                <div class="mock-card">
+                                    <span class="mc-label">Total Spend</span>
+                                    <span class="mc-val">$14,510</span>
+                                    <span class="mc-sub">↓ 18% vs. prior</span>
+                                </div>
+                                <div class="mock-card">
+                                    <span class="mc-label">PPD Average</span>
+                                    <span class="mc-val">$4.76</span>
+                                    <span class="mc-sub">105 beds</span>
+                                </div>
+                            </div>
+                            <div class="mock-card" style="flex:1;">
+                                <span class="mc-label">Spend by Category</span>
+                                <div class="mock-bar-group">
+                                    <div class="mock-bar-row"><span class="mock-bar-label">Incontinence</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:78%"></div></div></div>
+                                    <div class="mock-bar-row"><span class="mock-bar-label">PPE</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:58%"></div></div></div>
+                                    <div class="mock-bar-row"><span class="mock-bar-label">Dietary</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:92%"></div></div></div>
+                                    <div class="mock-bar-row"><span class="mock-bar-label">Can Liners</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:32%"></div></div></div>
+                                    <div class="mock-bar-row"><span class="mock-bar-label">Linens</span><div class="mock-bar-track"><div class="mock-bar-fill green" style="width:40%"></div></div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
