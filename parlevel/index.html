@@ -310,6 +310,36 @@
             color: var(--text-secondary); line-height: 1.5;
         }
 
+        /* ─── SOCIAL PROOF QUOTE ─── */
+        .quote-section { padding: 120px 0; background: var(--bg); text-align: center; }
+        .quote-border {
+            max-width: 680px; margin: 0 auto;
+            padding: 48px 56px;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 20px;
+        }
+        .quote-text {
+            font-size: clamp(18px, 2.5vw, 22px); font-weight: 400;
+            color: var(--text); line-height: 1.6;
+            letter-spacing: -0.01em; margin-bottom: 24px;
+        }
+        .quote-attr {
+            font-size: 14px; font-weight: 500; color: var(--text-secondary);
+        }
+        @media (max-width: 600px) {
+            .quote-border { padding: 32px 24px; }
+        }
+
+        /* ─── SOLUTION ICONS ─── */
+        .sol-icon {
+            width: 40px; height: 40px; margin-bottom: 20px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .sol-icon svg {
+            width: 28px; height: 28px; stroke: var(--blue);
+            stroke-width: 1.5; fill: none;
+        }
+
         /* ─── PPD SLIDER ─── */
         .slider-card {
             max-width: 640px; margin: 0 auto;
@@ -522,7 +552,7 @@
                 <span class="nav-powered">Powered by MeddMax LLC</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#how-it-works">Implementation</a></li>
                 <li><a href="#platform">Platform</a></li>
                 <li><a href="#reporting">Reporting</a></li>
                 <li><a href="#analysis" class="btn-primary">Request Spend Analysis</a></li>
@@ -534,7 +564,7 @@
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#how-it-works" onclick="closeMobile()">How It Works</a>
+        <a href="#how-it-works" onclick="closeMobile()">Implementation</a>
         <a href="#platform" onclick="closeMobile()">Platform</a>
         <a href="#reporting" onclick="closeMobile()">Reporting</a>
         <a href="#analysis" class="btn-primary" onclick="closeMobile()">Request Spend Analysis</a>
@@ -547,7 +577,7 @@
             <p class="hero-sub hero-anim hero-anim-2">We take over your facility's entire purchasing operation. Better pricing, zero effort, no cost to you.</p>
             <div class="hero-ctas hero-anim hero-anim-3">
                 <a href="#analysis" class="btn-primary" style="padding:16px 32px;font-size:17px;">Request Your Spend Analysis &rarr;</a>
-                <a href="#how-it-works" class="btn-ghost">How it works &nbsp;&#8250;</a>
+                <a href="#how-it-works" class="btn-ghost">The implementation path &nbsp;&#8250;</a>
             </div>
         </div>
     </section>
@@ -602,72 +632,67 @@
     <!-- ─── THE SOLUTION ─── -->
     <section class="sec sec-white">
         <div class="container center">
-            <div class="sec-label reveal">The Solution</div>
-            <h2 class="sec-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;">A full purchasing department. At zero cost.</h2>
-            <p class="sec-desc reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;">Our team takes over. Our pricing goes to work. The facility pays nothing.</p>
+            <div class="sec-label reveal">What Changes</div>
+            <h2 class="sec-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;">The expected result.</h2>
+            <p class="sec-desc reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;">You sign. The lock is removed. Your facility operates at a pricing tier it could never access alone.</p>
 
             <div class="solution-grid reveal reveal-delay-3">
                 <div class="solution-card">
-                    <div class="solution-num">01</div>
-                    <h3>AI-Powered Spend Analysis</h3>
-                    <p>We analyze your facility's purchasing history line by line — identifying pricing gaps and categories where volume leverage is left on the table.</p>
+                    <div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></div>
+                    <h3>Unlocked Tier-1 Pricing</h3>
+                    <p>Unlocking locked Tier-1 pricing structures that individual facilities cannot access. The result is immediate, measurable cost reduction across every supply category.</p>
                 </div>
                 <div class="solution-card">
-                    <div class="solution-num">02</div>
-                    <h3>Negotiated Pricing, Day One</h3>
-                    <p>Our national volume relationships mean your facility gets pricing typically reserved for large hospital networks — immediately.</p>
+                    <div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <h3>Proprietary Procurement Engine</h3>
+                    <p>Our algorithms optimize every order against national-scale data. You see the savings. The methodology stays with us.</p>
                 </div>
                 <div class="solution-card">
-                    <div class="solution-num">03</div>
-                    <h3>Complete Procurement Management</h3>
-                    <p>We handle every PO, reorder, formulary update, and vendor call. Your team orders what they need — we manage everything else.</p>
+                    <div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/></svg></div>
+                    <h3>Continuous National Scaling</h3>
+                    <p>Every facility we onboard strengthens the network. Your pricing improves over time — automatically, without renegotiation.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ─── HOW IT WORKS ─── -->
+    <!-- ─── THE IMPLEMENTATION PATH ─── -->
     <section class="sec sec-alt" id="how-it-works">
         <div class="container center">
-            <div class="sec-label reveal">How It Works</div>
-            <h2 class="sec-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;">Five steps to better procurement.</h2>
-            <p class="sec-desc reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;margin-bottom:56px;">Getting started is simple. We do the heavy lifting.</p>
+            <div class="sec-label reveal">The Implementation Path</div>
+            <h2 class="sec-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;">Three milestones. Zero disruption.</h2>
+            <p class="sec-desc reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;margin-bottom:56px;">You don't change anything. We deploy around you.</p>
 
-            <div class="timeline-grid reveal reveal-delay-3">
-                <div class="timeline-step">
-                    <div class="timeline-num">01</div>
-                    <div class="timeline-dot"></div>
-                    <h4>Spend Analysis</h4>
-                    <p>We analyze 12 months of purchasing — every vendor, every line item, every price point.</p>
+            <div class="solution-grid reveal reveal-delay-3">
+                <div class="solution-card">
+                    <div class="solution-num">01</div>
+                    <h3>Spend Audit</h3>
+                    <p>We map your current state. You share invoices — we identify the gap between what you pay and what you should pay.</p>
                 </div>
-                <div class="timeline-step">
-                    <div class="timeline-num">02</div>
-                    <div class="timeline-dot"></div>
-                    <h4>Agreement</h4>
-                    <p>You sign a zero-cost management agreement. No fees. Ever.</p>
+                <div class="solution-card">
+                    <div class="solution-num">02</div>
+                    <h3>Pricing Unlock</h3>
+                    <p>You sign a zero-cost agreement. Immediately, your facility begins operating on unlocked Tier-1 pricing structures.</p>
                 </div>
-                <div class="timeline-step">
-                    <div class="timeline-num">03</div>
-                    <div class="timeline-dot"></div>
-                    <h4>Platform Setup</h4>
-                    <p>We open and fund your OnCare account. Full formulary loaded.</p>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-num">04</div>
-                    <div class="timeline-dot"></div>
-                    <h4>We Manage</h4>
-                    <p>Every PO, reorder, and vendor call — handled by our team.</p>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-num">05</div>
-                    <div class="timeline-dot"></div>
-                    <h4>PPD Report</h4>
-                    <p>Monthly reporting on spend, per patient day, and savings.</p>
+                <div class="solution-card">
+                    <div class="solution-num">03</div>
+                    <h3>Managed Operations</h3>
+                    <p>We run procurement. You receive monthly PPD reporting showing exactly what changed and exactly what you saved.</p>
                 </div>
             </div>
 
             <div class="timeline-banner reveal" style="margin-top:48px;">
                 <p>No cost. &nbsp;&nbsp; No risk. &nbsp;&nbsp; No disruption.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── SOCIAL PROOF ─── -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-border reveal">
+                <p class="quote-text">&ldquo;Par Level AI didn&rsquo;t just change our pricing; they changed our operational bandwidth. We stopped managing boxes and started managing people.&rdquo;</p>
+                <p class="quote-attr">&mdash; Regional COO</p>
             </div>
         </div>
     </section>
@@ -894,7 +919,7 @@
                 <div>
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#how-it-works">Implementation</a></li>
                         <li><a href="#analysis">Request Spend Analysis</a></li>
                         <li><a href="mailto:david@meddmax.com">Contact Us</a></li>
                     </ul>
