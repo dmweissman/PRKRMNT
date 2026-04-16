@@ -310,6 +310,69 @@
             color: var(--text-secondary); line-height: 1.5;
         }
 
+        /* ─── PPD SLIDER ─── */
+        .slider-card {
+            max-width: 640px; margin: 0 auto;
+            background: var(--bg); border-radius: 20px;
+            border: 1px solid rgba(0,0,0,0.06);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+        .slider-header {
+            background: var(--text); padding: 20px 28px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .slider-header h3 { font-size: 15px; font-weight: 600; color: #fff; }
+        .slider-badge {
+            font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+            padding: 3px 10px; border-radius: 4px;
+            background: rgba(0,113,227,0.15); color: var(--blue);
+        }
+        .slider-body { padding: 28px; }
+        .slider-label-row {
+            display: flex; align-items: baseline; justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .slider-label-row span { font-size: 14px; font-weight: 500; color: var(--text-secondary); }
+        .slider-label-row .bed-val { font-size: 28px; font-weight: 500; color: var(--text); }
+        .slider-track {
+            -webkit-appearance: none; appearance: none;
+            width: 100%; height: 4px; border-radius: 100px;
+            background: #E5E5EA; outline: none; margin-bottom: 32px;
+        }
+        .slider-track::-webkit-slider-thumb {
+            -webkit-appearance: none; width: 24px; height: 24px;
+            background: var(--blue); border-radius: 50%; cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,113,227,0.3);
+        }
+        .slider-track::-moz-range-thumb {
+            width: 24px; height: 24px; border: none;
+            background: var(--blue); border-radius: 50%; cursor: pointer;
+        }
+        .category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+        .cat-row {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 14px 0; border-bottom: 1px solid var(--border);
+        }
+        .cat-row:nth-last-child(-n+2) { border-bottom: none; }
+        .cat-row .cat-name { font-size: 14px; color: var(--text-secondary); }
+        .cat-row .cat-val { font-size: 15px; font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+        .slider-total {
+            margin-top: 20px; padding-top: 20px;
+            border-top: 1px solid var(--border);
+            display: flex; align-items: baseline; justify-content: space-between;
+        }
+        .slider-total .label { font-size: 13px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.08em; }
+        .slider-total .total-val { font-size: 24px; font-weight: 500; color: var(--blue); }
+        .slider-savings {
+            margin-top: 16px; padding: 14px 20px;
+            background: #F0FDF4; border-radius: 12px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .slider-savings .sav-label { font-size: 13px; font-weight: 600; color: #166534; }
+        .slider-savings .sav-val { font-size: 17px; font-weight: 600; color: #166534; font-variant-numeric: tabular-nums; }
+        .slider-note { font-size: 12px; color: var(--text-secondary); margin-top: 16px; text-align: center; }
+
         /* ─── REPORT SECTION ─── */
         .report-rows { display: flex; flex-direction: column; }
         .report-row {
@@ -591,6 +654,48 @@
         </div>
     </section>
 
+    <!-- ─── PPD SAVINGS SLIDER ─── -->
+    <section class="sec sec-alt" id="savings-slider">
+        <div class="container center">
+            <div class="sec-label reveal">PPD Savings Model</div>
+            <h2 class="sec-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;">See your savings by category.</h2>
+            <p class="sec-desc reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;">Adjust your bed count. Watch the numbers move.</p>
+
+            <div class="slider-card reveal reveal-delay-3">
+                <div class="slider-header">
+                    <h3>Monthly Spend Projection</h3>
+                    <div class="slider-badge">INTERACTIVE</div>
+                </div>
+                <div class="slider-body">
+                    <div class="slider-label-row">
+                        <span>Facility Bed Count</span>
+                        <span class="bed-val" id="bedDisplay">120</span>
+                    </div>
+                    <input type="range" class="slider-track" id="bedSlider" min="1" max="500" value="120">
+
+                    <div class="category-grid" id="catGrid">
+                        <div class="cat-row"><span class="cat-name">Incontinence</span><span class="cat-val" id="cat-inc">$0</span></div>
+                        <div class="cat-row"><span class="cat-name">PPE / Gloves</span><span class="cat-val" id="cat-ppe">$0</span></div>
+                        <div class="cat-row"><span class="cat-name">Can Liners</span><span class="cat-val" id="cat-lin">$0</span></div>
+                        <div class="cat-row"><span class="cat-name">Dietary</span><span class="cat-val" id="cat-die">$0</span></div>
+                        <div class="cat-row"><span class="cat-name">Linens</span><span class="cat-val" id="cat-lnr">$0</span></div>
+                        <div class="cat-row"><span class="cat-name">Janitorial</span><span class="cat-val" id="cat-jan">$0</span></div>
+                    </div>
+
+                    <div class="slider-total">
+                        <span class="label">Current Monthly Spend</span>
+                        <span class="total-val" id="totalSpend">$0</span>
+                    </div>
+                    <div class="slider-savings">
+                        <span class="sav-label">Est. Monthly Savings (18%)</span>
+                        <span class="sav-val" id="totalSavings">$0</span>
+                    </div>
+                    <p class="slider-note">Based on national PPD benchmarks for skilled nursing facilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ─── SAVINGS ANALYSIS FORM ─── -->
     <section class="sec sec-alt" id="analysis">
         <div class="container">
@@ -765,6 +870,42 @@
         // Mobile menu
         document.getElementById('hamburgerBtn').addEventListener('click', function() { document.getElementById('mobileMenu').classList.toggle('open'); });
         function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+        // PPD Savings Slider
+        (function() {
+            var slider = document.getElementById('bedSlider');
+            var display = document.getElementById('bedDisplay');
+            // PPD per bed per day (national benchmarks)
+            var ppd = { inc: 1.50, ppe: 1.20, lin: 0.55, die: 0.95, lnr: 0.60, jan: 0.48 };
+            var els = {
+                inc: document.getElementById('cat-inc'),
+                ppe: document.getElementById('cat-ppe'),
+                lin: document.getElementById('cat-lin'),
+                die: document.getElementById('cat-die'),
+                lnr: document.getElementById('cat-lnr'),
+                jan: document.getElementById('cat-jan')
+            };
+            var totalEl = document.getElementById('totalSpend');
+            var savEl = document.getElementById('totalSavings');
+
+            function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+
+            function update() {
+                var beds = parseInt(slider.value);
+                display.textContent = beds;
+                var total = 0;
+                for (var k in ppd) {
+                    var val = beds * ppd[k] * 30;
+                    els[k].textContent = fmt(val);
+                    total += val;
+                }
+                totalEl.textContent = fmt(total);
+                savEl.textContent = fmt(total * 0.18);
+            }
+
+            slider.addEventListener('input', update);
+            update();
+        })();
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
 </body>
