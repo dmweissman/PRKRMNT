@@ -126,9 +126,11 @@
 
         /* ─── HERO ─── */
         .hero {
-            padding: 160px 0 160px;
+            padding: 180px 0 160px;
             text-align: center;
             background: var(--bg);
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -479,7 +481,7 @@
         }
 
         /* ─── FOOTER ─── */
-        footer { background: var(--bg-alt); padding: 48px 0 32px; }
+        footer { background: var(--bg-alt); padding: 48px 0 32px; position: relative; z-index: 1; }
         .footer-main { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; }
         .footer-brand-name { font-size: 15px; font-weight: 600; color: var(--text); letter-spacing: 0.06em; margin-bottom: 4px; }
         .footer-powered { font-size: 11px; color: var(--blue); margin-bottom: 4px; }
@@ -534,7 +536,7 @@
         }
 
         @media (max-width: 600px) {
-            .hero { padding: 140px 0 100px; }
+            .hero { padding: 160px 0 100px; }
             .hero-ctas { flex-direction: column; }
             .btn-primary { width: 100%; justify-content: center; }
             .hero h1 { font-size: clamp(36px, 10vw, 48px); }
@@ -903,9 +905,9 @@
                 <div>
                     <h4>Integrations</h4>
                     <ul>
-                        <li><a href="#platform">Medline Portal Sync</a></li>
-                        <li><a href="#platform">McKesson Supply Manager</a></li>
-                        <li><a href="#platform">Twin Med Distribution</a></li>
+                        <li><a href="#platform">Tier-1 Portal Integration</a></li>
+                        <li><a href="#platform">National Logistics Sync</a></li>
+                        <li><a href="#platform">Direct-to-Facility Automation</a></li>
                     </ul>
                 </div>
                 <div>
