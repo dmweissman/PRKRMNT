@@ -1,1184 +1,426 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Par Level AI | The Purchasing Network for Nursing Homes</title>
-    <meta name="description" content="Par Level AI: the national purchasing network for nursing homes. Pricing negotiated across 100+ facilities, direct vendor pricing, and a dedicated AI agent for every customer. $0 cost to your facility.">
-    <meta name="keywords" content="Nursing Home Procurement, MeddMax Distribution, Healthcare Supply Chain AI">
-    <meta property="og:title" content="Par Level AI | The Purchasing Network for Nursing Homes">
-    <meta property="og:description" content="Join the purchasing network built for nursing homes. Better prices, full spend transparency, guaranteed savings. No cost to your facility.">
-    <meta property="og:image" content="https://www.parlevelai.com/images/og-image.png">
-    <meta property="og:url" content="https://www.parlevelai.com">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Par Level AI | The Purchasing Network for Nursing Homes">
-    <meta name="twitter:description" content="Join the purchasing network built for nursing homes. Better prices, full spend transparency, guaranteed savings. No cost to your facility.">
-    <meta name="twitter:image" content="https://www.parlevelai.com/images/og-image.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        :root {
-            --text: #1D1D1F;
-            --text-secondary: #86868B;
-            --bg: #FFFFFF;
-            --bg-alt: #F5F5F7;
-            --blue: #0071E3;
-            --blue-hover: #0077ED;
-            --border: rgba(0,0,0,0.06);
-            --green: #34C759;
-        }
+  <title>National GPO & Procurement Network for Nursing Homes | Par Level AI</title>
+  <meta name="title" content="National GPO & Procurement Network for Nursing Homes | Par Level AI">
+  <meta name="description" content="Access national tier pricing at Medline, McKesson, Staples & more with zero upfront fees. Par Level AI aggregates nursing home spend to guarantee lower PPD costs.">
+  <link rel="canonical" href="https://www.parlevelai.com/">
 
-        html { scroll-behavior: smooth; }
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.parlevelai.com/">
+  <meta property="og:title" content="Par Level AI | Enterprise Group Purchasing Network for Nursing Homes">
+  <meta property="og:description" content="Harness collective purchasing power across every department in your facility. Lower PPD supply spend with $0 membership fees.">
+  <meta property="og:image" content="https://www.parlevelai.com/og-image.jpg">
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            font-size: 19px;
-            font-weight: 400;
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.parlevelai.com/">
+  <meta property="twitter:title" content="Par Level AI | Enterprise Group Purchasing Network for Nursing Homes">
+  <meta property="twitter:description" content="Harness collective purchasing power across every department in your facility. Lower PPD supply spend with $0 membership fees.">
 
-        h1, h2, h3 { letter-spacing: -0.022em; color: var(--text); }
-        h2 { letter-spacing: -0.015em; }
-        .container { max-width: 980px; margin: 0 auto; padding: 0 24px; }
-        img { max-width: 100%; height: auto; display: block; }
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        /* ─── ANIMATIONS ─── */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+    input[type=range].brand-slider {
+      -webkit-appearance: none; appearance: none;
+      height: 4px; background: #1e293b; border-radius: 100px; outline: none;
+    }
+    input[type=range].brand-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 22px; height: 22px; background: #06b6d4;
+      border-radius: 50%; cursor: pointer;
+      box-shadow: 0 0 0 4px rgba(6,182,212,0.15);
+    }
+    input[type=range].brand-slider::-moz-range-thumb {
+      width: 22px; height: 22px; background: #06b6d4;
+      border: none; border-radius: 50%; cursor: pointer;
+    }
+  </style>
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://www.parlevelai.com/#organization",
+      "name": "Par Level AI",
+      "url": "https://www.parlevelai.com",
+      "logo": "https://www.parlevelai.com/logo.png",
+      "description": "National purchasing network and AI procurement agent for skilled nursing facilities and long-term care.",
+      "knowsAbout": [
+        "Group Purchasing Organization (GPO)",
+        "Nursing Home Procurement",
+        "Skilled Nursing Facility Logistics",
+        "Per Patient Day (PPD) Cost Optimization",
+        "Healthcare Supply Chain Automation"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Group Purchasing Network for Nursing Homes",
+      "provider": { "@id": "https://www.parlevelai.com/#organization" },
+      "areaServed": "US",
+      "serviceType": "Healthcare Procurement & Spend Management",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "$0 cost to facility; vendor-funded national account tier pricing."
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does Par Level AI cost my nursing home facility?",
+          "acceptedAnswer": { "@type": "Answer", "text": "There is $0 cost to your facility. Our national pricing agreements are vendor-funded, allowing you to access enterprise contract rates without membership dues or administrative fees." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we have to switch our existing medical suppliers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Your facility continues to buy directly from your current vendors on your existing accounts—you simply pay lower rates negotiated across our 100+ building network." }
         }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
-
-        .hero-anim { opacity: 0; animation: fadeUp 1s ease forwards; }
-        .hero-anim-1 { animation-delay: 0.1s; }
-        .hero-anim-2 { animation-delay: 0.3s; }
-        .hero-anim-3 { animation-delay: 0.5s; }
-        .hero-anim-4 { animation-delay: 0.7s; }
-
-        /* ─── NAV ─── */
-        nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            padding: 12px 0;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            transition: all 0.3s ease-in-out;
-        }
-
-        .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-
-        .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .nav-logo-icon {
-            width: 32px; height: 32px; flex-shrink: 0;
-        }
-        .nav-logo-text {
-            display: flex; flex-direction: column;
-        }
-        .nav-wordmark {
-            font-size: 14px; font-weight: 700; color: var(--text);
-            letter-spacing: 0.12em; text-decoration: none; line-height: 1.2;
-        }
-        .nav-powered {
-            font-size: 9px; color: var(--text-secondary); letter-spacing: 0.04em;
-            margin-top: 1px; font-weight: 500;
-        }
-
-        .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-        .nav-links a {
-            font-size: 14px; font-weight: 400; color: var(--text);
-            text-decoration: none; transition: all 0.3s ease-in-out;
-        }
-        .nav-links a:hover { color: var(--blue); }
-
-        .btn-primary {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 14px 40px; background: var(--blue); color: #fff;
-            font-size: 15px; font-weight: 600; border: none;
-            border-radius: 999px; text-decoration: none; cursor: pointer;
-            transition: all 0.3s ease-in-out;
-        }
-        .btn-primary:hover { background: var(--blue-hover); transform: scale(1.05); }
-
-        .btn-ghost {
-            display: inline-flex; align-items: center; gap: 4px;
-            padding: 12px 4px; background: none; color: var(--blue);
-            font-size: 15px; font-weight: 600; border: none;
-            text-decoration: none; cursor: pointer;
-            transition: all 0.3s ease-in-out;
-        }
-        .btn-ghost:hover { gap: 8px; }
-
-        .hamburger {
-            display: none; flex-direction: column; gap: 5px;
-            background: none; border: none; cursor: pointer; padding: 4px;
-        }
-        .hamburger span { display: block; width: 20px; height: 1.5px; background: var(--text); transition: all 0.3s ease-in-out; }
-
-        /* ─── HERO ─── */
-        .hero {
-            padding: 120px 0 64px;
-            text-align: center;
-            background: var(--bg);
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: clamp(44px, 7vw, 72px);
-            font-weight: 800;
-            line-height: 1.08;
-            letter-spacing: -0.04em;
-            margin-bottom: 20px;
-        }
-
-        .hero-sub {
-            font-size: clamp(17px, 2vw, 21px);
-            font-weight: 400;
-            color: var(--text-secondary);
-            margin-bottom: 44px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-
-        .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
-
-
-        /* ─── STATS ─── */
-        .stats-section { padding: 48px 0; background: var(--bg); }
-        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; text-align: center; }
-        .stat-num {
-            font-size: clamp(48px, 5vw, 56px); font-weight: 500;
-            color: var(--text); line-height: 1; margin-bottom: 8px;
-        }
-        .stat-label {
-            font-size: 12px; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 0.1em; color: var(--text-secondary);
-        }
-
-        /* ─── SECTIONS ─── */
-        .sec { padding: 96px 0; }
-        .sec-alt { background: var(--bg-alt); }
-        .sec-white { background: var(--bg); }
-
-        .sec-label {
-            font-size: 12px; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 0.1em; color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
-
-        .sec-title {
-            font-size: clamp(32px, 4.5vw, 48px);
-            font-weight: 600; line-height: 1.1;
-            margin-bottom: 20px; max-width: 560px;
-        }
-
-        .sec-desc {
-            font-size: 17px; color: var(--text-secondary);
-            line-height: 1.5; max-width: 520px; margin-bottom: 48px;
-        }
-
-        .center { text-align: center; }
-        .center .sec-title, .center .sec-desc { margin-left: auto; margin-right: auto; }
-
-        /* ─── TWO-COLUMN ─── */
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-
-        .img-container {
-            border-radius: 20px; overflow: hidden;
-            aspect-ratio: 4 / 3; background: var(--bg-alt);
-            border: 1px solid rgba(0,0,0,0.06);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.03);
-            transition: box-shadow 0.3s ease-in-out;
-        }
-        .img-container:hover { box-shadow: 0 16px 50px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04); }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; }
-        .img-container-wide { aspect-ratio: 16 / 10; }
-
-        .placeholder-text {
-            width: 100%; height: 100%; display: flex;
-            align-items: center; justify-content: center;
-            font-size: 13px; color: var(--text-secondary);
-            text-align: center; padding: 20px;
-        }
-
-        /* ─── BENTO PROBLEM CARDS ─── */
-        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-
-        .bento-card {
-            background: var(--bg-alt); border-radius: 28px;
-            padding: 40px 32px; text-align: center;
-            transition: all 0.3s ease-in-out;
-        }
-        .bento-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
-
-        .bento-icon {
-            width: 56px; height: 56px; margin: 0 auto 20px;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .bento-icon svg { width: 32px; height: 32px; stroke: var(--text-secondary); stroke-width: 1.5; fill: none; }
-
-        .bento-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
-        .bento-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.5; }
-
-        /* ─── SOLUTION CARDS ─── */
-        .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-
-        .solution-card {
-            background: var(--bg); border-radius: 20px;
-            padding: 40px 32px;
-            transition: all 0.3s ease-in-out;
-        }
-        .solution-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-
-        .solution-num { font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 16px; }
-        .solution-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; line-height: 1.3; }
-        .solution-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.5; }
-
-        /* ─── TIMELINE ─── */
-        .timeline-grid {
-            display: grid; grid-template-columns: repeat(5, 1fr);
-            gap: 0; position: relative;
-        }
-        .timeline-grid::before {
-            content: ''; position: absolute; top: 28px;
-            left: 10%; right: 10%; height: 1px;
-            background: var(--border);
-        }
-
-        .timeline-step { text-align: center; padding: 0 12px; position: relative; }
-        .timeline-num { font-size: 28px; font-weight: 700; color: var(--text); opacity: 0.15; line-height: 1; margin-bottom: 12px; }
-        .timeline-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); margin: 0 auto 16px; position: relative; z-index: 1; }
-        .timeline-step h4 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
-        .timeline-step p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
-
-        .timeline-banner {
-            margin-top: 56px; padding: 20px 0;
-            text-align: center;
-        }
-        .timeline-banner p { font-size: 17px; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.04em; }
-
-        /* ─── PLATFORM BULLETS ─── */
-        .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-        .bullet-list li {
-            font-size: 17px; color: var(--text-secondary);
-            line-height: 1.5; padding-left: 20px; position: relative;
-        }
-        .bullet-list li::before { content: '\2022'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
-
-        /* ─── FORM ─── */
-        .form-card {
-            background: var(--bg-alt); border-radius: 20px; padding: 48px 40px;
-        }
-        .form-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 28px; }
-
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .form-full { grid-column: 1 / -1; }
-
-        .form-field label { display: block; font-size: 12px; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
-        .form-field input, .form-field select, .form-field textarea {
-            width: 100%; padding: 12px 14px;
-            background: var(--bg); border: 1px solid rgba(0,0,0,0.1);
-            border-radius: 12px; color: var(--text);
-            font-family: inherit; font-size: 15px; outline: none;
-            transition: all 0.3s ease-in-out;
-        }
-        .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
-            border-color: var(--blue); box-shadow: 0 0 0 3px rgba(0,113,227,0.1);
-        }
-        .form-field textarea { resize: vertical; min-height: 100px; }
-        .form-field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2386868B' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
-
-        .form-submit { margin-top: 20px; }
-        .form-submit .btn-primary { width: 100%; justify-content: center; padding: 16px; font-size: 16px; }
-        .form-note { font-size: 13px; color: var(--text-secondary); text-align: center; margin-top: 14px; }
-
-        /* ─── BENEFIT ROWS ─── */
-        .benefit-rows { display: flex; flex-direction: column; gap: 12px; }
-        .benefit-row {
-            background: var(--bg-alt); border-radius: 12px;
-            padding: 16px 20px; font-size: 15px;
-            color: var(--text-secondary); line-height: 1.5;
-        }
-
-        /* ─── SOCIAL PROOF QUOTE ─── */
-        .quote-section { padding: 80px 0; background: var(--bg); text-align: center; }
-        .quote-border {
-            max-width: 680px; margin: 0 auto;
-            padding: 48px 56px;
-            border: 1px solid rgba(0,0,0,0.08);
-            border-radius: 20px;
-        }
-        .quote-text {
-            font-size: clamp(18px, 2.5vw, 22px); font-weight: 400;
-            color: var(--text); line-height: 1.6;
-            letter-spacing: -0.01em; margin-bottom: 24px;
-        }
-        .quote-attr {
-            font-size: 14px; font-weight: 500; color: var(--text-secondary);
-        }
-        @media (max-width: 600px) {
-            .quote-border { padding: 32px 24px; }
-        }
-
-        /* ─── SOLUTION ICONS ─── */
-        .sol-icon {
-            width: 40px; height: 40px; margin-bottom: 20px;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .sol-icon svg {
-            width: 28px; height: 28px; stroke: var(--blue);
-            stroke-width: 1.5; fill: none;
-        }
-
-        /* ─── PPD SLIDER ─── */
-        .slider-card {
-            max-width: 640px; margin: 0 auto;
-            background: var(--bg); border-radius: 20px;
-            border: 1px solid rgba(0,0,0,0.06);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-            overflow: hidden;
-        }
-        .slider-header {
-            background: var(--text); padding: 20px 28px;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .slider-header h3 { font-size: 15px; font-weight: 600; color: #fff; }
-        .slider-badge {
-            font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
-            padding: 3px 10px; border-radius: 4px;
-            background: rgba(0,113,227,0.15); color: var(--blue);
-        }
-        .slider-body { padding: 28px; }
-        .slider-label-row {
-            display: flex; align-items: baseline; justify-content: space-between;
-            margin-bottom: 8px;
-        }
-        .slider-label-row span { font-size: 14px; font-weight: 500; color: var(--text-secondary); }
-        .slider-label-row .bed-val { font-size: 28px; font-weight: 500; color: var(--text); }
-        .slider-track {
-            -webkit-appearance: none; appearance: none;
-            width: 100%; height: 4px; border-radius: 100px;
-            background: #E5E5EA; outline: none; margin-bottom: 32px;
-        }
-        .slider-track::-webkit-slider-thumb {
-            -webkit-appearance: none; width: 24px; height: 24px;
-            background: var(--blue); border-radius: 50%; cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,113,227,0.3);
-        }
-        .slider-track::-moz-range-thumb {
-            width: 24px; height: 24px; border: none;
-            background: var(--blue); border-radius: 50%; cursor: pointer;
-        }
-        .category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-        .cat-row {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 14px 0; border-bottom: 1px solid var(--border);
-        }
-        .cat-row:nth-last-child(-n+2) { border-bottom: none; }
-        .cat-row .cat-name { font-size: 14px; color: var(--text-secondary); }
-        .cat-row .cat-val { font-size: 15px; font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
-        .slider-total {
-            margin-top: 20px; padding-top: 20px;
-            border-top: 1px solid var(--border);
-            display: flex; align-items: baseline; justify-content: space-between;
-        }
-        .slider-total .label { font-size: 13px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.08em; }
-        .slider-total .total-val { font-size: 24px; font-weight: 500; color: var(--blue); }
-        .slider-savings {
-            margin-top: 16px; padding: 14px 20px;
-            background: #F0FDF4; border-radius: 12px;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .slider-savings .sav-label { font-size: 13px; font-weight: 600; color: #166534; }
-        .slider-savings .sav-val { font-size: 17px; font-weight: 600; color: #166534; font-variant-numeric: tabular-nums; }
-        .slider-note { font-size: 12px; color: var(--text-secondary); margin-top: 16px; text-align: center; }
-
-        /* ─── REPORT SECTION ─── */
-        .report-rows { display: flex; flex-direction: column; }
-        .report-row {
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-        }
-        .report-row:last-child { border-bottom: none; }
-        .report-row h4 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-        .report-row p { font-size: 14px; color: var(--text-secondary); }
-
-        /* ─── SYSTEMS GRID ─── */
-        .systems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-        .system-card {
-            background: var(--bg-alt); border-radius: 20px; padding: 36px 28px;
-            transition: all 0.3s ease-in-out;
-        }
-        .system-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-        .system-num { font-size: 24px; font-weight: 700; color: var(--text); opacity: 0.12; margin-bottom: 12px; }
-        .system-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
-        .system-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
-
-        /* ─── CLOSING ─── */
-        .closing { padding: 96px 0; text-align: center; background: var(--bg); }
-        .closing-stack {
-            font-size: clamp(36px, 6vw, 72px); font-weight: 700;
-            line-height: 1.08; letter-spacing: -0.022em; margin-bottom: 40px;
-        }
-        .closing-stack .blue { color: var(--blue); }
-        .closing-rule { width: 40px; height: 1px; background: var(--border); margin: 0 auto 40px; }
-        .closing-text {
-            font-size: 19px; color: var(--text-secondary);
-            line-height: 1.5; max-width: 400px; margin: 0 auto 36px;
-        }
-
-        /* ─── DASHBOARD MOCKUPS ─── */
-        .mock-dash {
-            width: 100%; height: 100%; padding: 24px;
-            display: flex; flex-direction: column; gap: 16px;
-            font-family: 'Inter', sans-serif;
-        }
-        .mock-topbar { display: flex; justify-content: space-between; align-items: center; }
-        .mock-topbar .title { font-size: 13px; font-weight: 600; color: var(--text); }
-        .mock-topbar .badge { font-size: 9px; font-weight: 700; color: var(--blue); background: rgba(0,113,227,0.08); padding: 3px 8px; border-radius: 4px; letter-spacing: 0.04em; }
-        .mock-row { display: flex; gap: 12px; flex: 1; }
-        .mock-card {
-            flex: 1; background: var(--bg); border: 1px solid rgba(0,0,0,0.05);
-            border-radius: 10px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between;
-        }
-        .mock-card .mc-label { font-size: 10px; color: var(--text-secondary); font-weight: 500; margin-bottom: 4px; }
-        .mock-card .mc-val { font-size: 18px; font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
-        .mock-card .mc-sub { font-size: 9px; color: var(--green); font-weight: 600; margin-top: 2px; }
-        .mock-bar-group { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
-        .mock-bar-row { display: flex; align-items: center; gap: 8px; }
-        .mock-bar-label { font-size: 9px; color: var(--text-secondary); width: 56px; text-align: right; }
-        .mock-bar-track { flex: 1; height: 6px; background: rgba(0,0,0,0.04); border-radius: 100px; overflow: hidden; }
-        .mock-bar-fill { height: 100%; border-radius: 100px; background: var(--blue); }
-        .mock-bar-fill.green { background: var(--green); }
-
-        /* ─── KNOWLEDGE GRAPH (hidden visually, accessible to crawlers) ─── */
-        .kg-section {
-            position: absolute; width: 1px; height: 1px;
-            padding: 0; margin: -1px; overflow: hidden;
-            clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
-        }
-
-        /* ─── FOOTER DIRECTORY (hidden visually, accessible to crawlers) ─── */
-        .footer-dir {
-            position: absolute; width: 1px; height: 1px;
-            padding: 0; margin: -1px; overflow: hidden;
-            clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
-        }
-
-        /* ─── FOOTER ─── */
-        footer { background: var(--bg-alt); padding: 48px 0 32px; position: relative; z-index: 1; }
-        .footer-main { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; }
-        .footer-brand-name { font-size: 15px; font-weight: 600; color: var(--text); letter-spacing: 0.06em; margin-bottom: 4px; }
-        .footer-powered { font-size: 11px; color: var(--blue); margin-bottom: 4px; }
-        .footer-tagline { font-size: 13px; color: var(--text-secondary); }
-        .footer-contact { text-align: right; display: flex; flex-direction: column; gap: 4px; }
-        .footer-contact a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease-in-out; }
-        .footer-contact a:hover { color: var(--blue); }
-        .footer-bar {
-            border-top: 1px solid var(--border); padding-top: 20px;
-            display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-            font-size: 12px; color: var(--text-secondary);
-        }
-
-        /* ─── TOAST ─── */
-        .toast {
-            position: fixed; bottom: 24px; right: 24px;
-            padding: 14px 24px; background: var(--green); color: #fff;
-            font-size: 14px; font-weight: 600; border-radius: 999px;
-            transform: translateY(100px); opacity: 0;
-            transition: all 0.4s ease; z-index: 200;
-        }
-        .toast.show { transform: translateY(0); opacity: 1; }
-
-        /* ─── MOBILE MENU ─── */
-        .mobile-menu {
-            display: none; position: fixed; inset: 0;
-            background: rgba(255,255,255,0.98); backdrop-filter: blur(20px);
-            z-index: 99; flex-direction: column;
-            align-items: center; justify-content: center; gap: 28px;
-        }
-        .mobile-menu.open { display: flex; }
-        .mobile-menu a { font-size: 20px; font-weight: 600; color: var(--text); text-decoration: none; }
-
-        /* ─── RESPONSIVE ─── */
-        @media (max-width: 900px) {
-            .nav-links { display: none; }
-            .hamburger { display: flex; }
-            .grid-2 { grid-template-columns: 1fr; gap: 32px; }
-            .solution-grid, .systems-grid { grid-template-columns: 1fr; }
-            .bento-grid { grid-template-columns: 1fr; }
-            .timeline-grid { grid-template-columns: 1fr; gap: 24px; }
-            .timeline-grid::before { display: none; }
-            .timeline-dot { display: none; }
-            .stats-grid { grid-template-columns: 1fr; gap: 24px; }
-            .form-grid { grid-template-columns: 1fr; }
-            .form-card { padding: 28px 20px; }
-            .sec { padding: 64px 0; }
-            .sec-title { font-size: 28px; margin-bottom: 12px; }
-            .sec-desc { font-size: 15px; margin-bottom: 32px; }
-            .sec-label { margin-bottom: 8px; }
-            .stats-section { padding: 48px 0; }
-            .quote-section { padding: 64px 0; }
-            .quote-border { padding: 32px 24px; }
-            .quote-text { font-size: 17px; }
-            .closing { padding: 72px 0; }
-            .closing-stack { font-size: 32px; margin-bottom: 24px; }
-            .closing-text { font-size: 16px; margin-bottom: 24px; }
-            .closing-rule { margin-bottom: 24px; }
-            .footer-main { flex-direction: column; gap: 20px; }
-            .footer-contact { text-align: left; }
-            .benefit-rows { gap: 8px; }
-            .benefit-row { padding: 12px 14px; font-size: 14px; }
-            .report-row { padding: 14px 0; }
-            .system-card { padding: 28px 20px; }
-            .solution-card { padding: 28px 20px; }
-            .bento-card { padding: 28px 20px; }
-            .bullet-list { gap: 12px; }
-            .bullet-list li { font-size: 15px; }
-            .timeline-banner { margin-top: 32px; }
-        }
-
-        @media (max-width: 600px) {
-            .hero { padding: 120px 0 64px; }
-            .hero h1 { font-size: clamp(32px, 9vw, 44px); margin-bottom: 12px; }
-            .hero-sub { font-size: 16px; margin-bottom: 28px; }
-            .hero-ctas { flex-direction: column; gap: 12px; }
-            .btn-primary { width: 100%; justify-content: center; }
-            body { font-size: 16px; }
-            .stat-num { font-size: 40px; }
-            .stat-label { font-size: 11px; }
-            .container { padding: 0 20px; }
-        }
-    </style>
+      ]
+    }
+  ]
+  </script>
 </head>
-<body>
 
-    <!-- ─── NAV ─── -->
-    <nav id="nav">
-        <div class="container nav-inner">
-            <a href="/" class="nav-brand">
-                <svg class="nav-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 2L36 10v12c0 9.6-6.8 16.4-16 18-9.2-1.6-16-8.4-16-18V10L20 2z" fill="#0A1628"/>
-                    <rect x="12" y="22" width="4" height="8" rx="1" fill="#0071E3" opacity="0.5"/>
-                    <rect x="18" y="18" width="4" height="12" rx="1" fill="#0071E3" opacity="0.7"/>
-                    <rect x="24" y="14" width="4" height="16" rx="1" fill="#0071E3"/>
-                    <path d="M14 20h14" stroke="#fff" stroke-width="0.5" opacity="0.2"/>
-                </svg>
-                <div class="nav-logo-text">
-                    <span class="nav-wordmark">PARLEVEL AI</span>
-                    <span class="nav-powered">by MeddMax LLC</span>
-                </div>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#network">The Network</a></li>
-                <li><a href="#how-it-works">Implementation</a></li>
-                <li><a href="#platform">Platform</a></li>
-                <li><a href="#reporting">Reporting</a></li>
-                <li><a href="#analysis" class="btn-primary">Request Spend Analysis</a></li>
-            </ul>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
 
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#how-it-works" onclick="closeMobile()">Implementation</a>
-        <a href="#platform" onclick="closeMobile()">Platform</a>
-        <a href="#reporting" onclick="closeMobile()">Reporting</a>
-        <a href="#analysis" class="btn-primary" onclick="closeMobile()">Request Spend Analysis</a>
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+        <span class="w-8 h-8 rounded-lg bg-cyan-500 text-slate-950 flex items-center justify-center font-black">P</span>
+        Par Level <span class="text-cyan-400">AI</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="#calculator" class="hidden sm:inline-block text-sm font-medium text-slate-300 hover:text-white transition">PPD Calculator</a>
+        <a href="#categories" class="hidden sm:inline-block text-sm font-medium text-slate-300 hover:text-white transition">Categories</a>
+        <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-cyan-400 border border-cyan-800/60 bg-cyan-950/40 hover:bg-cyan-900/60 rounded-lg transition">Book 15-Min Intro</a>
+      </div>
     </div>
+  </header>
 
-    <!-- ─── HERO ─── -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-anim hero-anim-1">Procurement, solved.</h1>
-            <p class="hero-sub hero-anim hero-anim-2">Join a national purchasing network built for nursing homes. Pricing negotiated across 100+ buildings, full transparency on every dollar, and savings we guarantee. At no cost to you.</p>
-            <div class="hero-ctas hero-anim hero-anim-3">
-                <a href="#analysis" class="btn-primary" style="padding:16px 32px;font-size:17px;">Request Your Spend Analysis &rarr;</a>
-                <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" target="_blank" rel="noopener" class="btn-ghost">Book a 15-minute call &nbsp;&#8250;</a>
-            </div>
+  <section class="relative pt-32 pb-20 px-6 max-w-6xl mx-auto text-center border-b border-slate-800/80">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-800/60 text-cyan-400 text-xs font-semibold tracking-wider uppercase mb-8">
+      <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      Enterprise Healthcare GPO
+    </div>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-[1.15]">
+      The National Group Purchasing Network Built for <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500 bg-clip-text text-transparent">Nursing Homes</span>.
+    </h1>
+    <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+      Harness aggregate buying power across every department in your facility. We guarantee reduced PPD supply spend with <strong class="text-white font-medium">$0 membership fees</strong>.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#audit-form" class="w-full sm:w-auto px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-xl transition duration-200 shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2">
+        Get a Free Line-Item Audit
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+      <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 bg-slate-900 hover:bg-slate-800 text-slate-300 font-medium rounded-xl border border-slate-800 transition duration-200 flex items-center justify-center gap-2">
+        <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Schedule Intro Call
+      </a>
+    </div>
+    <div class="mt-12 inline-flex items-center gap-2 text-xs font-medium text-slate-400 bg-slate-900/90 border border-slate-800 px-4 py-2.5 rounded-lg">
+      <svg class="w-4 h-4 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+      <span><strong class="text-white">Guaranteed Savings:</strong> We guarantee lower pricing on your facility's core line items or you pay nothing.</span>
+    </div>
+    <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-slate-900 text-left">
+      <div><div class="text-2xl sm:text-3xl font-bold text-white">$0</div><div class="text-xs text-slate-400 mt-1">Facility Membership Fees</div></div>
+      <div><div class="text-2xl sm:text-3xl font-bold text-cyan-400">15–25%</div><div class="text-xs text-slate-400 mt-1">Average PPD Cost Savings</div></div>
+      <div><div class="text-2xl sm:text-3xl font-bold text-white">100%</div><div class="text-xs text-slate-400 mt-1">Direct Vendor Billing</div></div>
+      <div><div class="text-2xl sm:text-3xl font-bold text-cyan-400">100+</div><div class="text-xs text-slate-400 mt-1">Facilities in Network</div></div>
+    </div>
+  </section>
+
+  <section id="calculator" class="py-20 px-6 max-w-4xl mx-auto">
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/40 text-cyan-400 text-xs font-semibold tracking-wider uppercase mb-4">Interactive</div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">See Your Facility Savings by Category</h2>
+      <p class="text-slate-400 mt-3 text-sm max-w-lg mx-auto">Adjust your bed count to see monthly spend and estimated savings across every category.</p>
+    </div>
+    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden">
+      <div class="bg-slate-950/80 px-6 py-4 flex items-center justify-between border-b border-slate-800">
+        <span class="text-sm font-semibold text-white">Monthly Spend Projection</span>
+        <span class="text-[10px] font-bold text-cyan-400 bg-cyan-950/60 px-2 py-1 rounded tracking-wider">LIVE</span>
+      </div>
+      <div class="p-6 sm:p-8">
+        <div class="flex items-baseline justify-between mb-2">
+          <span class="text-sm font-medium text-slate-400">Facility Bed Count</span>
+          <span class="text-2xl font-semibold text-white tabular-nums" id="bedDisplay">120</span>
         </div>
-    </section>
-
-
-    <!-- ─── STATS ─── -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item reveal">
-                    <div class="stat-num" data-count="15" data-suffix="+">15+</div>
-                    <div class="stat-label">Years in Healthcare Procurement</div>
-                </div>
-                <div class="stat-item reveal reveal-delay-1">
-                    <div class="stat-num" data-count="50" data-suffix="k+">50k+</div>
-                    <div class="stat-label">SKUs Under Management</div>
-                </div>
-                <div class="stat-item reveal reveal-delay-2">
-                    <div class="stat-num" data-count="0" data-prefix="$">$0</div>
-                    <div class="stat-label">Cost to Your Facility</div>
-                </div>
-            </div>
+        <input type="range" class="brand-slider w-full mb-8" id="bedSlider" min="1" max="500" value="120">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-6">
+          <div class="flex justify-between items-center py-2 border-b border-slate-800"><span class="text-sm text-slate-400">Incontinence</span><span class="text-sm font-semibold text-white tabular-nums" id="cat-inc">$0</span></div>
+          <div class="flex justify-between items-center py-2 border-b border-slate-800"><span class="text-sm text-slate-400">PPE / Gloves</span><span class="text-sm font-semibold text-white tabular-nums" id="cat-ppe">$0</span></div>
+          <div class="flex justify-between items-center py-2 border-b border-slate-800"><span class="text-sm text-slate-400">Can Liners</span><span class="text-sm font-semibold text-white tabular-nums" id="cat-lin">$0</span></div>
+          <div class="flex justify-between items-center py-2 border-b border-slate-800"><span class="text-sm text-slate-400">Dietary</span><span class="text-sm font-semibold text-white tabular-nums" id="cat-die">$0</span></div>
+          <div class="flex justify-between items-center py-2 border-b border-slate-800"><span class="text-sm text-slate-400">Linens</span><span class="text-sm font-semibold text-white tabular-nums" id="cat-lnr">$0</span></div>
+          <div class="flex justify-between items-center py-2 border-b border-slate-800"><span class="text-sm text-slate-400">Janitorial</span><span class="text-sm font-semibold text-white tabular-nums" id="cat-jan">$0</span></div>
         </div>
-    </section>
-
-    <!-- ─── THE NETWORK ─── -->
-    <section class="sec sec-white" id="network">
-        <div class="container center">
-            <div class="sec-label reveal">The Network</div>
-            <h2 class="sec-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;">One contract. National pricing.</h2>
-            <p class="sec-desc reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;">Your facility buys like a 10,000-bed operator from day one. One signature extends you the same contract pricing we negotiated at national scale &mdash; Medline, McKesson, Staples, and a growing roster of manufacturers. You keep your accounts and pay your vendors directly. You just pay less. Our vendor partnerships fund the program &mdash; never fees to your facility.</p>
-            <div class="benefit-rows reveal reveal-delay-2" style="max-width:640px;margin-left:auto;margin-right:auto;text-align:left;">
-                <div class="benefit-row">Contract pricing negotiated across 100+ facilities &mdash; extended to you on day one</div>
-                <div class="benefit-row">You pay Medline and Staples directly &mdash; same accounts, better rates</div>
-                <div class="benefit-row">No membership dues, no admin fees, no fine print</div>
-                <div class="benefit-row">Every new facility that joins makes the network's pricing stronger</div>
-            </div>
+        <div class="flex justify-between items-baseline pt-4 border-t border-slate-800">
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Current Monthly Spend</span>
+          <span class="text-2xl font-semibold text-white tabular-nums" id="totalSpend">$0</span>
         </div>
-    </section>
-
-    <!-- ─── YOUR OWN AI AGENT ─── -->
-    <section class="sec sec-alt" id="ai-agent">
-        <div class="container center">
-            <div class="sec-label reveal">The Difference</div>
-            <h2 class="sec-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;">Your own AI agent. Not a member portal.</h2>
-            <p class="sec-desc reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;">Legacy purchasing networks bury your numbers in quarterly PDFs and clunky member portals. Every Par Level customer gets a dedicated AI agent instead &mdash; ask it anything about your spend, your pricing, your orders, your usage. Any hour, any day. Nothing hidden, nothing delayed.</p>
-            <div class="benefit-rows reveal reveal-delay-2" style="max-width:640px;margin-left:auto;margin-right:auto;text-align:left;">
-                <div class="benefit-row">"What did we spend on incontinence last month vs. the month before?" &mdash; answered in seconds</div>
-                <div class="benefit-row">Line-item pricing visibility on every SKU, every order</div>
-                <div class="benefit-row">Flags over-ordering before it happens, not after</div>
-                <div class="benefit-row">Your data, always accessible &mdash; no waiting on a rep to run a report</div>
-            </div>
-            <div class="reveal reveal-delay-3" style="margin-top:32px;">
-                <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" target="_blank" rel="noopener" class="btn-primary" style="padding:16px 32px;font-size:17px;">See It in Action &mdash; Book a Call &rarr;</a>
-            </div>
+        <div class="mt-4 p-4 bg-cyan-950/40 border border-cyan-900/60 rounded-xl flex justify-between items-center">
+          <span class="text-sm font-semibold text-cyan-300">Est. Monthly Savings (18%)</span>
+          <span class="text-xl font-bold text-cyan-400 tabular-nums" id="totalSavings">$0</span>
         </div>
-    </section>
+        <p class="text-[11px] text-slate-500 mt-4 text-center italic">Based on national PPD benchmarks for skilled nursing facilities.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- ─── THE PROBLEM (Bento) ─── -->
-    <section class="sec sec-alt">
-        <div class="container center">
-            <div class="sec-label reveal">The Problem</div>
-            <h2 class="sec-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;">The hidden cost of buying alone.</h2>
-            <p class="sec-desc reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;">Most facilities don't realize how much they lose to fragmented vendors, manual processes, and unoptimized pricing.</p>
-            <div class="bento-grid reveal reveal-delay-3">
-                <div class="bento-card">
-                    <div class="bento-icon"><svg viewBox="0 0 24 24"><circle cx="5" cy="5" r="1.5"/><circle cx="12" cy="8" r="1.5"/><circle cx="19" cy="5" r="1.5"/><circle cx="7" cy="16" r="1.5"/><circle cx="15" cy="19" r="1.5"/><circle cx="19" cy="14" r="1.5"/></svg></div>
-                    <h3>Fragmented</h3>
-                    <p>6+ vendors, 12+ invoices, zero consolidated visibility into what you're spending.</p>
-                </div>
-                <div class="bento-card">
-                    <div class="bento-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-4 4 4 4-8 4 4"/><path d="M21 3v18H3"/></svg></div>
-                    <h3>Overpaid</h3>
-                    <p>Without national volume leverage, individual facilities pay 15-25% more than necessary.</p>
-                </div>
-                <div class="bento-card">
-                    <div class="bento-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-                    <h3>Manual</h3>
-                    <p>Staff hours lost to ordering, chasing reps, reconciling invoices, and managing stock levels.</p>
-                </div>
-            </div>
+  <section id="categories" class="py-20 px-6 max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl font-bold text-white tracking-tight">Full Facility Coverage. Any Category.</h2>
+      <p class="text-slate-400 mt-2 text-sm max-w-lg mx-auto">We leverage collective volume to secure national tier contract pricing across your entire operational footprint.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-6 bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl transition duration-300">
+        <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/40 flex items-center justify-center mb-4 text-cyan-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.75 21a.75.75 0 01-.75-.75V17c0-2.21 1.79-4 4-4h8c2.21 0 4 1.79 4 4v3.25a.75.75 0 01-.75.75H4.75zM12 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
         </div>
-    </section>
-
-    <!-- ─── THE SOLUTION ─── -->
-    <section class="sec sec-white">
-        <div class="container center">
-            <div class="sec-label reveal">What Changes</div>
-            <h2 class="sec-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;">The expected result.</h2>
-            <p class="sec-desc reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;">You sign. The lock is removed. Your facility operates at a pricing tier it could never access alone.</p>
-
-            <div class="solution-grid reveal reveal-delay-3">
-                <div class="solution-card">
-                    <div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></div>
-                    <h3>Unlocked Tier-1 Pricing</h3>
-                    <p>Unlocking locked Tier-1 pricing structures that individual facilities cannot access. The result is immediate, measurable cost reduction across every supply category.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                    <h3>Proprietary Procurement Engine</h3>
-                    <p>Our algorithms optimize every order against national-scale data. You see the savings. The methodology stays with us.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/></svg></div>
-                    <h3>Continuous National Scaling</h3>
-                    <p>Every facility we onboard strengthens the network. Your pricing improves over time — automatically, without renegotiation.</p>
-                </div>
-            </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Clinical & Nursing</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Incontinence, wound care, enteral feeding, gloves, and daily medical supplies.</p>
+      </div>
+      <div class="p-6 bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl transition duration-300">
+        <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/40 flex items-center justify-center mb-4 text-cyan-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg>
         </div>
-    </section>
-
-    <!-- ─── THE IMPLEMENTATION PATH ─── -->
-    <section class="sec sec-alt" id="how-it-works">
-        <div class="container center">
-            <div class="sec-label reveal">The Implementation Path</div>
-            <h2 class="sec-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;">Three milestones. Zero disruption.</h2>
-            <p class="sec-desc reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;margin-bottom:56px;">You don't change anything. We deploy around you.</p>
-
-            <div class="solution-grid reveal reveal-delay-3">
-                <div class="solution-card">
-                    <div class="solution-num">01</div>
-                    <h3>Spend Audit</h3>
-                    <p>We map your current state. You share invoices — we identify the gap between what you pay and what you should pay.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="solution-num">02</div>
-                    <h3>Pricing Unlock</h3>
-                    <p>You sign a zero-cost agreement. Immediately, your facility begins operating on unlocked Tier-1 pricing structures.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="solution-num">03</div>
-                    <h3>Ongoing Partnership</h3>
-                    <p>You keep ordering the way you do today &mdash; at network rates. We streamline where it helps, and your monthly PPD reporting shows exactly what you saved.</p>
-                </div>
-            </div>
-
-            <div class="timeline-banner reveal" style="margin-top:48px;">
-                <p>No cost. &nbsp;&nbsp; No disruption. &nbsp;&nbsp; Savings guaranteed.</p>
-            </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Dietary & Foodservice</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Raw food contracts, supplements, kitchen sanitation, and specialized equipment.</p>
+      </div>
+      <div class="p-6 bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl transition duration-300">
+        <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/40 flex items-center justify-center mb-4 text-cyan-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7-7-7M12 3v18"/></svg>
         </div>
-    </section>
-
-    <!-- ─── SOCIAL PROOF ─── -->
-    <section class="quote-section">
-        <div class="container">
-            <div class="quote-border reveal">
-                <p class="quote-text">&ldquo;Par Level AI didn&rsquo;t just change our pricing; they changed our operational bandwidth. We stopped managing boxes and started managing people.&rdquo;</p>
-                <p class="quote-attr">&mdash; Regional COO</p>
-            </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Janitorial & Sanitation</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Paper products, trash liners, chemical dispensing systems, and facility maintenance.</p>
+      </div>
+      <div class="p-6 bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl transition duration-300">
+        <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/40 flex items-center justify-center mb-4 text-cyan-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
         </div>
-    </section>
-
-    <!-- ─── THE PLATFORM ─── -->
-    <section class="sec sec-white" id="platform">
-        <div class="container">
-            <div class="grid-2">
-                <div class="reveal">
-                    <div class="sec-label">The Platform</div>
-                    <h2 class="sec-title">You order.<br>We sharpen<br>everything behind it.</h2>
-                    <ul class="bullet-list">
-                        <li>Your team keeps ordering direct from Medline, Staples, and your existing vendors — at network pricing.</li>
-                        <li>Want it streamlined? As part of the partnership we'll organize ordering by department — Nursing gets Medical &amp; Clinical, Dietary gets Food Service, Housekeeping gets Janitorial.</li>
-                        <li>Your AI agent watches par levels and pricing in the background — and answers any spend question, any time.</li>
-                    </ul>
-                </div>
-                <div class="reveal reveal-delay-2">
-                    <div class="img-container img-container-wide" role="img" aria-label="Par Level AI procurement dashboard showing department ordering, spend tracking, and inventory status">
-                        <div class="mock-dash">
-                            <div class="mock-topbar">
-                                <span class="title">Par Level AI — Procurement Dashboard</span>
-                                <span class="badge">LIVE</span>
-                            </div>
-                            <div class="mock-row">
-                                <div class="mock-card">
-                                    <span class="mc-label">Monthly Spend</span>
-                                    <span class="mc-val">$18,420</span>
-                                    <span class="mc-sub">↓ 22% vs. prior</span>
-                                </div>
-                                <div class="mock-card">
-                                    <span class="mc-label">Active SKUs</span>
-                                    <span class="mc-val">342</span>
-                                    <span class="mc-sub">All departments</span>
-                                </div>
-                                <div class="mock-card">
-                                    <span class="mc-label">PPD</span>
-                                    <span class="mc-val">$5.28</span>
-                                    <span class="mc-sub">↓ $1.40 saved</span>
-                                </div>
-                            </div>
-                            <div class="mock-card" style="flex:0;">
-                                <span class="mc-label">Department Ordering Status</span>
-                                <div class="mock-bar-group">
-                                    <div class="mock-bar-row"><span class="mock-bar-label">Medical</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:85%"></div></div></div>
-                                    <div class="mock-bar-row"><span class="mock-bar-label">Dietary</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:72%"></div></div></div>
-                                    <div class="mock-bar-row"><span class="mock-bar-label">Janitorial</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:60%"></div></div></div>
-                                    <div class="mock-bar-row"><span class="mock-bar-label">Linens</span><div class="mock-bar-track"><div class="mock-bar-fill green" style="width:95%"></div></div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Capital & Furniture</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Beds, patient lifts, interior decor, resident room furnishings, and HVAC.</p>
+      </div>
+      <div class="p-6 bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl transition duration-300">
+        <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/40 flex items-center justify-center mb-4 text-cyan-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
         </div>
-    </section>
-
-    <!-- ─── PPD SAVINGS SLIDER ─── -->
-    <section class="sec sec-alt" id="savings-slider">
-        <div class="container center">
-            <div class="sec-label reveal">PPD Savings Model</div>
-            <h2 class="sec-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;">See your savings by category.</h2>
-            <p class="sec-desc reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;">Adjust your bed count. Watch the numbers move.</p>
-
-            <div class="slider-card reveal reveal-delay-3">
-                <div class="slider-header">
-                    <h3>Monthly Spend Projection</h3>
-                    <div class="slider-badge">INTERACTIVE</div>
-                </div>
-                <div class="slider-body">
-                    <div class="slider-label-row">
-                        <span>Facility Bed Count</span>
-                        <span class="bed-val" id="bedDisplay">120</span>
-                    </div>
-                    <input type="range" class="slider-track" id="bedSlider" min="1" max="500" value="120">
-
-                    <div class="category-grid" id="catGrid">
-                        <div class="cat-row"><span class="cat-name">Incontinence</span><span class="cat-val" id="cat-inc">$0</span></div>
-                        <div class="cat-row"><span class="cat-name">PPE / Gloves</span><span class="cat-val" id="cat-ppe">$0</span></div>
-                        <div class="cat-row"><span class="cat-name">Can Liners</span><span class="cat-val" id="cat-lin">$0</span></div>
-                        <div class="cat-row"><span class="cat-name">Dietary</span><span class="cat-val" id="cat-die">$0</span></div>
-                        <div class="cat-row"><span class="cat-name">Linens</span><span class="cat-val" id="cat-lnr">$0</span></div>
-                        <div class="cat-row"><span class="cat-name">Janitorial</span><span class="cat-val" id="cat-jan">$0</span></div>
-                    </div>
-
-                    <div class="slider-total">
-                        <span class="label">Current Monthly Spend</span>
-                        <span class="total-val" id="totalSpend">$0</span>
-                    </div>
-                    <div class="slider-savings">
-                        <span class="sav-label">Est. Monthly Savings (18%)</span>
-                        <span class="sav-val" id="totalSavings">$0</span>
-                    </div>
-                    <p class="slider-note">Based on national PPD benchmarks for skilled nursing facilities.</p>
-                </div>
-            </div>
-            <div class="reveal reveal-delay-3" style="margin-top:32px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-                <a href="#analysis" class="btn-primary" style="padding:16px 32px;font-size:17px;">Get These Savings Verified &rarr;</a>
-                <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" target="_blank" rel="noopener" class="btn-ghost" style="padding:16px 32px;font-size:17px;">Book a 15-minute call &nbsp;&#8250;</a>
-            </div>
+        <h3 class="text-lg font-semibold text-white mb-2">Office & Technology</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Administrative supplies, printing, hardware, and facility management software.</p>
+      </div>
+      <div class="p-6 bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl transition duration-300">
+        <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/40 flex items-center justify-center mb-4 text-cyan-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
         </div>
-    </section>
+        <h3 class="text-lg font-semibold text-white mb-2">Ancillary Services</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Linen rentals, biohazard disposal, waste management, and lab contracts.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- ─── SAVINGS ANALYSIS FORM ─── -->
-    <section class="sec sec-alt" id="analysis">
-        <div class="container">
-            <div class="grid-2">
-                <div class="reveal">
-                    <div class="sec-label">Your Savings Analysis</div>
-                    <h2 class="sec-title">Total Transparency.</h2>
-                    <p class="sec-desc">Before you commit to anything.</p>
-                    <div class="benefit-rows">
-                        <div class="benefit-row">Immediate savings from Day 1 — our pricing is better than what you're paying now</div>
-                        <div class="benefit-row">One organized system replacing 6-12 separate vendor relationships</div>
-                        <div class="benefit-row">Automated reorders — nothing falls through the cracks</div>
-                        <div class="benefit-row">Full spend visibility by category, by department, by month</div>
-                        <div class="benefit-row">Right product, right amount, right time — always</div>
-                    </div>
-                </div>
-                <div class="reveal reveal-delay-2">
-                    <div class="form-card">
-                        <h3>Request Your Free Spend Analysis</h3>
-                        <form id="auditForm" action="https://formspree.io/f/xzdqarjo" method="POST">
-                            <div class="form-grid">
-                                <div class="form-field"><label>First Name</label><input type="text" name="first_name" required placeholder="Jane"></div>
-                                <div class="form-field"><label>Last Name</label><input type="text" name="last_name" required placeholder="Smith"></div>
-                                <div class="form-field form-full"><label>Facility Name</label><input type="text" name="facility" required placeholder="Sunrise Healthcare Center"></div>
-                                <div class="form-field"><label>Your Title</label><input type="text" name="title" placeholder="Administrator"></div>
-                                <div class="form-field"><label>Number of Beds</label><select name="beds" required><option value="" disabled selected>Select</option><option>1-50</option><option>51-100</option><option>101-200</option><option>201-300</option><option>300+</option></select></div>
-                                <div class="form-field"><label>Est. Monthly Spend</label><select name="monthly_spend"><option value="" disabled selected>Select</option><option>Under $5K</option><option>$5K-$15K</option><option>$15K-$40K</option><option>$40K-$100K</option><option>$100K+</option></select></div>
-                                <div class="form-field"></div>
-                                <div class="form-field"><label>Email</label><input type="email" name="email" required placeholder="jane@facility.com"></div>
-                                <div class="form-field"><label>Phone</label><input type="tel" name="phone" placeholder="(555) 555-5555"></div>
-                                <div class="form-field form-full"><label>Message (optional)</label><textarea name="message" placeholder="Tell us about your current procurement setup..."></textarea></div>
-                            </div>
-                            <div class="form-submit"><button type="submit" class="btn-primary" id="submitBtn">Request Free Analysis &rarr;</button></div>
-                            <p class="form-note">We'll reach out within one business day. No obligation.</p>
-                        </form>
-                    </div>
-                </div>
-            </div>
+  <section class="py-16 bg-slate-900/40 border-y border-slate-800/60 px-6">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="flex gap-4 items-start">
+        <svg class="w-8 h-8 text-cyan-400 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        <div>
+          <h4 class="font-semibold text-white text-base">Keep Your Current Vendors</h4>
+          <p class="text-xs text-slate-400 mt-1 leading-relaxed">No operational friction. Continue purchasing directly from your existing distributors using our tiered pricing.</p>
         </div>
-    </section>
-
-    <!-- ─── PPD REPORTING ─── -->
-    <section class="sec sec-white" id="reporting">
-        <div class="container">
-            <div class="grid-2">
-                <div class="reveal">
-                    <div class="sec-label">Monthly PPD Reporting</div>
-                    <h2 class="sec-title">Total Transparency.<br>Every month.</h2>
-                    <div class="report-rows">
-                        <div class="report-row"><h4>Total Supply Spend by Category</h4><p>Medical, Dietary, Janitorial, Office — every dollar accounted for</p></div>
-                        <div class="report-row"><h4>Per Patient Day vs. Census</h4><p>The metric every CFO and regional director tracks</p></div>
-                        <div class="report-row"><h4>Month-over-Month Trend</h4><p>Which category moved and exactly why</p></div>
-                        <div class="report-row"><h4>Category Deep Dive</h4><p>Top 10 items by spend — quantity, unit cost, trend</p></div>
-                        <div class="report-row"><h4>Savings vs. Prior Period</h4><p>Dollar savings versus what you paid before Par Level AI</p></div>
-                        <div class="report-row"><h4>Formulary Compliance</h4><p>All required items ordered? Any critical gaps?</p></div>
-                    </div>
-                </div>
-                <div class="reveal reveal-delay-2">
-                    <div class="img-container" role="img" aria-label="Monthly PPD report showing spend by category: Incontinence, PPE, Dietary, Can Liners, Linens with savings trends">
-                        <div class="mock-dash">
-                            <div class="mock-topbar">
-                                <span class="title">Monthly PPD Report — April 2026</span>
-                                <span class="badge">GENERATED</span>
-                            </div>
-                            <div class="mock-row">
-                                <div class="mock-card">
-                                    <span class="mc-label">Total Spend</span>
-                                    <span class="mc-val">$14,510</span>
-                                    <span class="mc-sub">↓ 18% vs. prior</span>
-                                </div>
-                                <div class="mock-card">
-                                    <span class="mc-label">PPD Average</span>
-                                    <span class="mc-val">$4.76</span>
-                                    <span class="mc-sub">105 beds</span>
-                                </div>
-                            </div>
-                            <div class="mock-card" style="flex:1;">
-                                <span class="mc-label">Spend by Category</span>
-                                <div class="mock-bar-group">
-                                    <div class="mock-bar-row"><span class="mock-bar-label">Incontinence</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:78%"></div></div></div>
-                                    <div class="mock-bar-row"><span class="mock-bar-label">PPE</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:58%"></div></div></div>
-                                    <div class="mock-bar-row"><span class="mock-bar-label">Dietary</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:92%"></div></div></div>
-                                    <div class="mock-bar-row"><span class="mock-bar-label">Can Liners</span><div class="mock-bar-track"><div class="mock-bar-fill" style="width:32%"></div></div></div>
-                                    <div class="mock-bar-row"><span class="mock-bar-label">Linens</span><div class="mock-bar-track"><div class="mock-bar-fill green" style="width:40%"></div></div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <svg class="w-8 h-8 text-cyan-400 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        <div>
+          <h4 class="font-semibold text-white text-base">Formulary Control & AI Guardrails</h4>
+          <p class="text-xs text-slate-400 mt-1 leading-relaxed">Automated tracking flags off-contract substitutions and price creep before invoices reach your accounts payable department.</p>
         </div>
-    </section>
-
-    <!-- ─── SIX SYSTEMS ─── -->
-    <section class="sec sec-alt">
-        <div class="container center">
-            <div class="sec-label reveal">What We Put in Place</div>
-            <h2 class="sec-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;">Six systems. Zero waste.</h2>
-            <p class="sec-desc reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;margin-bottom:56px;">Every facility gets the same infrastructure. Fully managed.</p>
-
-            <div class="systems-grid reveal reveal-delay-3">
-                <div class="system-card"><div class="system-num">01</div><h4>Automated Par Level Triggers</h4><p>When inventory hits the threshold, we reorder automatically. Emergency purchases disappear.</p></div>
-                <div class="system-card"><div class="system-num">02</div><h4>Formulary Discipline</h4><p>Each department limited to approved items. No rogue orders. No duplicate purchasing.</p></div>
-                <div class="system-card"><div class="system-num">03</div><h4>Monthly Spend Controls</h4><p>We track spend by category, department, and item. We flag overage before the bill arrives.</p></div>
-                <div class="system-card"><div class="system-num">04</div><h4>Right Quantity, Every Time</h4><p>We right-size every order based on census and usage data. Over-purchasing disappears.</p></div>
-                <div class="system-card"><div class="system-num">05</div><h4>One Invoice</h4><p>Instead of reconciling 6-12 invoices monthly, your AP team sees one clean statement.</p></div>
-                <div class="system-card"><div class="system-num">06</div><h4>Savings Locked In</h4><p>Our negotiated pricing doesn't expire. Every order runs through our relationships. Savings compound.</p></div>
-            </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <svg class="w-8 h-8 text-cyan-400 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+        <div>
+          <h4 class="font-semibold text-white text-base">Zero Risk Line-Item Audit</h4>
+          <p class="text-xs text-slate-400 mt-1 leading-relaxed">Provide 30 days of recent spend files. We present a line-by-line price comparison proving your exact dollar savings upfront.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- ─── CLOSING ─── -->
-    <section class="closing">
-        <div class="container">
-            <div class="closing-stack reveal">
-                Better pricing.<br>
-                Smarter systems.<br>
-                Monthly clarity.<br>
-                <span class="blue">$0 to your facility.</span>
-            </div>
-            <div class="closing-rule reveal reveal-delay-1"></div>
-            <p class="closing-text reveal reveal-delay-2">Let us run your spend analysis.<br>See exactly what you save — before you commit to anything.</p>
-            <div class="reveal reveal-delay-3" style="text-align:center;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-                <a href="#analysis" class="btn-primary" style="padding:16px 32px;font-size:17px;">Request Your Free Analysis &rarr;</a>
-                <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" target="_blank" rel="noopener" class="btn-ghost" style="padding:16px 32px;font-size:17px;">Book a 15-minute call &nbsp;&#8250;</a>
-            </div>
+  <section id="audit-form" class="py-20 px-6 max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Request Your Free Line-Item Audit</h2>
+      <p class="text-slate-400 mt-3 text-sm max-w-lg mx-auto">Tell us about your facility. We'll respond within one business day with your custom savings projection.</p>
+    </div>
+    <div class="p-8 sm:p-10 rounded-3xl bg-slate-900/60 border border-slate-800">
+      <form id="auditForm" action="https://formspree.io/f/xzdqarjo" method="POST" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">First Name</label>
+            <input type="text" name="first_name" required placeholder="Jane" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Last Name</label>
+            <input type="text" name="last_name" required placeholder="Smith" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
+          </div>
         </div>
-    </section>
-
-    <!-- ─── KNOWLEDGE GRAPH / PROCUREMENT ECOSYSTEM ─── -->
-    <section class="kg-section" aria-label="The Procurement Ecosystem">
-        <div class="container">
-            <div class="center">
-                <div class="sec-label reveal">The Procurement Ecosystem</div>
-                <h2 class="sec-title reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;">How network purchasing transforms long-term care operations.</h2>
-            </div>
-            <div class="kg-grid reveal reveal-delay-2">
-                <article class="kg-card">
-                    <h3>National Tier Pricing Optimization for Skilled Nursing Facilities</h3>
-                    <p>Par Level AI optimizes national tier pricing within major distribution portals — giving individual SNFs access to pricing structures typically reserved for multi-facility hospital networks. Our procurement engine maps every SKU to the lowest available contract tier, eliminating the markup gap that single-facility operators absorb.</p>
-                </article>
-                <article class="kg-card">
-                    <h3>Streamlining Long-Term Care Supply Chains Beyond Traditional Broker Models</h3>
-                    <p>Traditional supply chain brokers negotiate contracts but don't execute procurement. Par Level AI replaces fragmented broker relationships with a fully managed model — handling every purchase order, vendor interaction, and formulary update. The result: fewer vendors, consolidated invoicing, and pricing that doesn't depend on a middleman's margin.</p>
-                </article>
-                <article class="kg-card">
-                    <h3>Automated Per Patient Day Tracking for SNF Administrators</h3>
-                    <p>Per Patient Day (PPD) is the metric that drives every procurement decision in skilled nursing. Par Level AI automates PPD tracking across all supply categories — Medical, Dietary, Janitorial, Linens — correlating spend against daily census to surface cost anomalies before they reach month-end reporting. Administrators get category-level visibility without manual reconciliation.</p>
-                </article>
-            </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Facility Name</label>
+          <input type="text" name="facility" required placeholder="Sunrise Healthcare Center" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
         </div>
-    </section>
-
-    <!-- ─── FOOTER ─── -->
-    <footer>
-        <div class="container">
-            <div class="footer-main">
-                <div>
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
-                        <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 2L36 10v12c0 9.6-6.8 16.4-16 18-9.2-1.6-16-8.4-16-18V10L20 2z" fill="#0A1628"/>
-                            <rect x="12" y="22" width="4" height="8" rx="1" fill="#0071E3" opacity="0.5"/>
-                            <rect x="18" y="18" width="4" height="12" rx="1" fill="#0071E3" opacity="0.7"/>
-                            <rect x="24" y="14" width="4" height="16" rx="1" fill="#0071E3"/>
-                        </svg>
-                        <div class="footer-brand-name">PARLEVEL AI</div>
-                    </div>
-                    <div class="footer-powered" style="color:var(--text-secondary);">by MeddMax LLC</div>
-                    <div class="footer-tagline">The Purchasing Network for Healthcare Facilities</div>
-                </div>
-                <div class="footer-contact">
-                    <a href="mailto:david@meddmax.com">david@meddmax.com</a>
-                    <a href="tel:+16466444641">646-644-4641</a>
-                    <a href="https://meddmax.com" target="_blank" rel="noopener">meddmax.com</a>
-                </div>
-            </div>
-            <nav class="footer-dir" aria-label="Semantic Directory">
-                <div>
-                    <h4>Solutions</h4>
-                    <ul>
-                        <li><a href="#analysis">National Account Pricing</a></li>
-                        <li><a href="#savings-slider">Par-Level Automation</a></li>
-                        <li><a href="#reporting">PPD Reporting AI</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Integrations</h4>
-                    <ul>
-                        <li><a href="#platform">Tier-1 Portal Integration</a></li>
-                        <li><a href="#platform">National Logistics Sync</a></li>
-                        <li><a href="#platform">Direct-to-Facility Automation</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Categories</h4>
-                    <ul>
-                        <li><a href="#savings-slider">Incontinence Management</a></li>
-                        <li><a href="#savings-slider">Enteral Nutrition Supply</a></li>
-                        <li><a href="#savings-slider">SNF Janitorial Logistics</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#how-it-works">Implementation</a></li>
-                        <li><a href="#analysis">Request Spend Analysis</a></li>
-                        <li><a href="mailto:david@meddmax.com">Contact Us</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="footer-bar">
-                <span>&copy; 2026 Par Level AI. A MeddMax LLC company.</span>
-                <span>Edison, NJ &middot; Serving healthcare facilities nationwide</span>
-            </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Your Title</label>
+            <input type="text" name="title" placeholder="Administrator" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Number of Beds</label>
+            <select name="beds" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
+              <option value="" disabled selected>Select</option>
+              <option>1–50</option><option>51–100</option><option>101–200</option><option>201–300</option><option>300+</option>
+            </select>
+          </div>
         </div>
-    </footer>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Email</label>
+            <input type="email" name="email" required placeholder="jane@facility.com" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Phone</label>
+            <input type="tel" name="phone" placeholder="(555) 555-5555" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Message (optional)</label>
+          <textarea name="message" rows="3" placeholder="Tell us about your current procurement setup..." class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition"></textarea>
+        </div>
+        <button type="submit" id="submitBtn" class="w-full px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-xl transition duration-200 shadow-lg shadow-cyan-500/25">
+          Request Free Line-Item Audit →
+        </button>
+        <p class="text-xs text-slate-500 text-center">We'll respond within one business day. No obligation.</p>
+      </form>
+    </div>
+  </section>
 
-    <div class="toast" id="toast">Analysis request sent successfully.</div>
+  <section class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <div class="p-10 sm:p-12 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 shadow-2xl relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <h2 class="text-2xl sm:text-3xl font-bold text-white relative z-10">See Your Facility Savings in 48 Hours</h2>
+      <p class="text-slate-400 text-sm mt-3 max-w-lg mx-auto relative z-10">Upload recent invoices or spend reports. We'll run a side-by-side line-item comparison against our national purchasing network contracts.</p>
+      <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" target="_blank" rel="noopener noreferrer" class="inline-block mt-8 px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-xl transition duration-200 shadow-lg shadow-cyan-500/20 relative z-10">
+        Book a 15-Minute Intro Call
+      </a>
+    </div>
+  </section>
 
-    <script>
-        // Smooth scroll with 80px nav offset
-        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-            a.addEventListener('click', function(e) {
-                var href = this.getAttribute('href');
-                if (href === '#') { e.preventDefault(); return; }
-                var t = document.querySelector(href);
-                if (t) {
-                    e.preventDefault();
-                    t.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
-                    if (t.classList.contains('reveal')) t.classList.add('visible');
-                    window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
-                    history.replaceState(null, null, ' ');
-                }
-            });
+  <footer class="border-t border-slate-800/80 py-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between gap-6">
+      <div>
+        <a href="/" class="text-lg font-bold text-white tracking-tight flex items-center gap-2">
+          <span class="w-7 h-7 rounded-lg bg-cyan-500 text-slate-950 flex items-center justify-center font-black text-sm">P</span>
+          Par Level <span class="text-cyan-400">AI</span>
+        </a>
+        <p class="text-xs text-slate-500 mt-2">A MeddMax LLC company · Edison, NJ</p>
+      </div>
+      <div class="flex flex-col sm:items-end gap-1 text-sm text-slate-400">
+        <a href="mailto:david@meddmax.com" class="hover:text-cyan-400 transition">david@meddmax.com</a>
+        <a href="tel:+16466444641" class="hover:text-cyan-400 transition">646-644-4641</a>
+        <span class="text-xs text-slate-600 mt-2">© 2026 Par Level AI</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="fixed bottom-6 right-6 px-6 py-3 bg-emerald-500 text-slate-950 font-semibold text-sm rounded-full shadow-lg opacity-0 translate-y-10 transition-all duration-300 pointer-events-none z-50">
+    Audit request sent successfully.
+  </div>
+
+  <nav aria-label="Semantic Directory" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+    <h4>Solutions</h4>
+    <ul><li><a href="#audit-form">National Account Pricing</a></li><li><a href="#calculator">Par-Level Automation</a></li><li><a href="#categories">PPD Reporting AI</a></li></ul>
+    <h4>Categories</h4>
+    <ul><li><a href="#calculator">Incontinence Management</a></li><li><a href="#calculator">Enteral Nutrition Supply</a></li><li><a href="#calculator">SNF Janitorial Logistics</a></li></ul>
+  </nav>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (href === '#') { e.preventDefault(); return; }
+        var t = document.querySelector(href);
+        if (t) {
+          e.preventDefault();
+          window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
+          history.replaceState(null, null, ' ');
+        }
+      });
+    });
+
+    (function() {
+      var slider = document.getElementById('bedSlider');
+      var display = document.getElementById('bedDisplay');
+      var ppd = { inc: 1.15, ppe: 0.45, lin: 0.18, die: 3.20, lnr: 0.22, jan: 0.35 };
+      var els = {
+        inc: document.getElementById('cat-inc'),
+        ppe: document.getElementById('cat-ppe'),
+        lin: document.getElementById('cat-lin'),
+        die: document.getElementById('cat-die'),
+        lnr: document.getElementById('cat-lnr'),
+        jan: document.getElementById('cat-jan')
+      };
+      var totalEl = document.getElementById('totalSpend');
+      var savEl = document.getElementById('totalSavings');
+      var nf = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+      function update() {
+        var beds = parseInt(slider.value);
+        display.textContent = beds;
+        var total = 0;
+        for (var k in ppd) {
+          var val = beds * ppd[k] * 30.4;
+          els[k].textContent = nf.format(val);
+          total += val;
+        }
+        totalEl.textContent = nf.format(total);
+        savEl.textContent = nf.format(total * 0.18);
+      }
+      slider.addEventListener('input', update);
+      update();
+    })();
+
+    document.getElementById('auditForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var f = this, btn = document.getElementById('submitBtn');
+      fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+        .then(function(r) {
+          if (r.ok) {
+            f.reset();
+            btn.textContent = 'Sent ✓';
+            btn.classList.remove('bg-cyan-500', 'hover:bg-cyan-400');
+            btn.classList.add('bg-emerald-500');
+            var toast = document.getElementById('toast');
+            toast.classList.remove('opacity-0', 'translate-y-10');
+            toast.classList.add('opacity-100', 'translate-y-0');
+            setTimeout(function() {
+              toast.classList.add('opacity-0', 'translate-y-10');
+              toast.classList.remove('opacity-100', 'translate-y-0');
+            }, 5000);
+          }
         });
+    });
+  </script>
 
-        // Scroll reveal (fade in + slide up 20px)
-        var ro = new IntersectionObserver(function(entries) {
-            entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.reveal').forEach(function(el) { ro.observe(el); });
-
-        // Stat counters
-        var co = new IntersectionObserver(function(entries) {
-            entries.forEach(function(e) {
-                if (e.isIntersecting) {
-                    var el = e.target, target = parseInt(el.getAttribute('data-count'));
-                    var pre = el.getAttribute('data-prefix') || '', suf = el.getAttribute('data-suffix') || '';
-                    if (target === 0) { el.textContent = pre + '0' + suf; co.unobserve(el); return; }
-                    var cur = 0, step = Math.ceil(target / 40);
-                    var t = setInterval(function() { cur += step; if (cur >= target) { cur = target; clearInterval(t); } el.textContent = pre + cur + suf; }, 35);
-                    co.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
-        document.querySelectorAll('.stat-num[data-count]').forEach(function(el) { co.observe(el); });
-
-        // Form submit
-        document.getElementById('auditForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var f = this, btn = document.getElementById('submitBtn');
-            fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
-                .then(function(r) {
-                    if (r.ok) {
-                        f.reset(); btn.textContent = 'Sent \u2713'; btn.style.background = '#34C759';
-                        var toast = document.getElementById('toast');
-                        toast.classList.add('show');
-                        setTimeout(function() { toast.classList.remove('show'); }, 5000);
-                    }
-                });
-        });
-
-        // Mobile menu
-        document.getElementById('hamburgerBtn').addEventListener('click', function() { document.getElementById('mobileMenu').classList.toggle('open'); });
-        function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
-
-        // PPD Savings Slider
-        (function() {
-            var slider = document.getElementById('bedSlider');
-            var display = document.getElementById('bedDisplay');
-            var ppd = { inc: 1.15, ppe: 0.45, lin: 0.18, die: 3.20, lnr: 0.22, jan: 0.35 };
-            var els = {
-                inc: document.getElementById('cat-inc'),
-                ppe: document.getElementById('cat-ppe'),
-                lin: document.getElementById('cat-lin'),
-                die: document.getElementById('cat-die'),
-                lnr: document.getElementById('cat-lnr'),
-                jan: document.getElementById('cat-jan')
-            };
-            var totalEl = document.getElementById('totalSpend');
-            var savEl = document.getElementById('totalSavings');
-            var nf = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
-
-            function update() {
-                var beds = parseInt(slider.value);
-                display.textContent = beds;
-                var total = 0;
-                for (var k in ppd) {
-                    var val = beds * ppd[k] * 30.4;
-                    els[k].textContent = nf.format(val);
-                    total += val;
-                }
-                totalEl.textContent = nf.format(total);
-                savEl.textContent = nf.format(total * 0.18);
-            }
-
-            slider.addEventListener('input', update);
-            update();
-        })();
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
