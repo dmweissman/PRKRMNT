@@ -27,20 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
-    input[type=range].brand-slider {
-      -webkit-appearance: none; appearance: none;
-      height: 4px; background: #1e293b; border-radius: 100px; outline: none;
-    }
-    input[type=range].brand-slider::-webkit-slider-thumb {
-      -webkit-appearance: none; appearance: none;
-      width: 22px; height: 22px; background: #06b6d4;
-      border-radius: 50%; cursor: pointer;
-      box-shadow: 0 0 0 4px rgba(6,182,212,0.15);
-    }
-    input[type=range].brand-slider::-moz-range-thumb {
-      width: 22px; height: 22px; background: #06b6d4;
-      border: none; border-radius: 50%; cursor: pointer;
-    }
+    input[type=range] { accent-color: #0891b2; }
   </style>
 
   <script type="application/ld+json">
@@ -95,257 +82,149 @@
   </script>
 </head>
 
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
+<body class="bg-white text-slate-900 font-sans antialiased selection:bg-cyan-500 selection:text-white">
 
-  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="/" class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
-        <span class="w-8 h-8 rounded-lg bg-cyan-500 text-slate-950 flex items-center justify-center font-black">P</span>
-        Par Level <span class="text-cyan-400">AI</span>
+      <a href="/" class="text-xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+        <span class="w-8 h-8 rounded-lg bg-cyan-600 text-white flex items-center justify-center font-black">P</span>
+        Par Level <span class="text-cyan-600">AI</span>
       </a>
       <div class="flex items-center gap-4">
-        <a href="#calculator" class="hidden sm:inline-block text-sm font-medium text-slate-300 hover:text-white transition">PPD Calculator</a>
-        <a href="#categories" class="hidden sm:inline-block text-sm font-medium text-slate-300 hover:text-white transition">Categories</a>
-        <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-cyan-400 border border-cyan-800/60 bg-cyan-950/40 hover:bg-cyan-900/60 rounded-lg transition">Book 15-Min Intro</a>
+        <a href="#calculator" class="hidden sm:inline-block text-sm font-medium text-slate-600 hover:text-slate-900 transition">PPD Calculator</a>
+        <a href="#categories" class="hidden sm:inline-block text-sm font-medium text-slate-600 hover:text-slate-900 transition">Categories</a>
+        <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-cyan-700 border border-cyan-200 bg-cyan-50 hover:bg-cyan-100 rounded-lg transition">Book 15-Min Intro</a>
       </div>
     </div>
   </header>
 
-  <section class="relative pt-32 pb-20 px-6 max-w-6xl mx-auto text-center border-b border-slate-800/80">
-    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-800/60 text-cyan-400 text-xs font-semibold tracking-wider uppercase mb-8">
-      <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+  <section class="relative pt-32 pb-20 px-6 max-w-6xl mx-auto text-center border-b border-slate-200">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-700 text-xs font-semibold tracking-wider uppercase mb-8">
+      <svg class="w-4 h-4 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
       Enterprise Healthcare GPO
     </div>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-[1.15]">
-      The National Group Purchasing Network Built for <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500 bg-clip-text text-transparent">Nursing Homes</span>.
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 max-w-4xl mx-auto leading-[1.15]">
+      The National Group Purchasing Network Built for <span class="bg-gradient-to-r from-cyan-600 via-teal-500 to-blue-600 bg-clip-text text-transparent">Nursing Homes</span>.
     </h1>
-    <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
-      Harness aggregate buying power across every department in your facility. We guarantee reduced PPD supply spend with <strong class="text-white font-medium">$0 membership fees</strong>.
+    <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
+      Harness aggregate buying power across every department in your facility. We guarantee reduced PPD supply spend with <strong class="text-slate-900 font-semibold">$0 membership fees</strong>.
     </p>
     <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="#audit-form" class="w-full sm:w-auto px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-xl transition duration-200 shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2">
+      <a href="#audit-form" class="w-full sm:w-auto px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl transition duration-200 shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2">
         Get a Free Line-Item Audit
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
-      <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 bg-slate-900 hover:bg-slate-800 text-slate-300 font-medium rounded-xl border border-slate-800 transition duration-200 flex items-center justify-center gap-2">
-        <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 font-medium rounded-xl border border-slate-300 transition duration-200 flex items-center justify-center gap-2">
+        <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
         Schedule Intro Call
       </a>
     </div>
-    <div class="mt-12 inline-flex items-center gap-2 text-xs font-medium text-slate-400 bg-slate-900/90 border border-slate-800 px-4 py-2.5 rounded-lg">
-      <svg class="w-4 h-4 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
-      <span><strong class="text-white">Guaranteed Savings:</strong> We guarantee lower pricing on your facility's core line items or you pay nothing.</span>
+    <div class="mt-12 inline-flex items-center gap-2 text-xs font-medium text-slate-600 bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-lg">
+      <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+      <span><strong class="text-slate-900">Guaranteed Savings:</strong> We guarantee lower pricing on your facility's core line items or you pay nothing.</span>
     </div>
-    <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-slate-900 text-left">
-      <div><div class="text-2xl sm:text-3xl font-bold text-white">$0</div><div class="text-xs text-slate-400 mt-1">Facility Membership Fees</div></div>
-      <div><div class="text-2xl sm:text-3xl font-bold text-cyan-400">15–25%</div><div class="text-xs text-slate-400 mt-1">Average PPD Cost Savings</div></div>
-      <div><div class="text-2xl sm:text-3xl font-bold text-white">100%</div><div class="text-xs text-slate-400 mt-1">Direct Vendor Billing</div></div>
-      <div><div class="text-2xl sm:text-3xl font-bold text-cyan-400">100+</div><div class="text-xs text-slate-400 mt-1">Facilities in Network</div></div>
+    <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-slate-200 text-left">
+      <div><div class="text-2xl sm:text-3xl font-bold text-slate-900">$0</div><div class="text-xs text-slate-500 mt-1">Facility Membership Fees</div></div>
+      <div><div class="text-2xl sm:text-3xl font-bold text-cyan-600">15–25%</div><div class="text-xs text-slate-500 mt-1">Average PPD Cost Savings</div></div>
+      <div><div class="text-2xl sm:text-3xl font-bold text-slate-900">100%</div><div class="text-xs text-slate-500 mt-1">Direct Vendor Billing</div></div>
+      <div><div class="text-2xl sm:text-3xl font-bold text-cyan-600">100+</div><div class="text-xs text-slate-500 mt-1">Facilities in Network</div></div>
     </div>
   </section>
 
-  <section id="calculator" class="py-20 px-6 max-w-4xl mx-auto">
+  <section id="calculator" class="py-20 px-6 max-w-4xl mx-auto border-b border-slate-200">
     <div class="text-center mb-10">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/40 text-cyan-400 text-xs font-semibold tracking-wider uppercase mb-4">Interactive</div>
-      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">See Your Facility Savings by Category</h2>
-      <p class="text-slate-400 mt-3 text-sm max-w-lg mx-auto">Adjust your bed count to see monthly spend and estimated savings across every category.</p>
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Estimate Your Facility's Annual Savings</h2>
+      <p class="text-slate-600 mt-2 text-sm">Adjust the sliders to see estimated savings using Par Level AI national GPO tiers.</p>
     </div>
-    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden">
-      <div class="bg-slate-950/80 px-6 py-4 flex items-center justify-between border-b border-slate-800">
-        <span class="text-sm font-semibold text-white">Monthly Spend Projection</span>
-        <span class="text-[10px] font-bold text-cyan-400 bg-cyan-950/60 px-2 py-1 rounded tracking-wider">LIVE</span>
-      </div>
-      <div class="p-6 sm:p-8">
-        <div class="flex items-baseline justify-between mb-2">
-          <span class="text-sm font-medium text-slate-400">Facility Bed Count</span>
-          <span class="text-2xl font-semibold text-white tabular-nums" id="bedDisplay">120</span>
+    <div class="p-8 sm:p-10 bg-white border border-slate-200 rounded-3xl shadow-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="space-y-6">
+          <div>
+            <div class="flex justify-between text-sm mb-2">
+              <span class="text-slate-700 font-medium">Licensed Beds</span>
+              <span id="beds-val" class="text-cyan-600 font-bold">120 Beds</span>
+            </div>
+            <input type="range" id="beds-slider" min="30" max="500" value="120" step="10" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" oninput="updateCalculator()" />
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-2">
+              <span class="text-slate-700 font-medium">Average Occupancy</span>
+              <span id="occ-val" class="text-cyan-600 font-bold">85%</span>
+            </div>
+            <input type="range" id="occ-slider" min="50" max="100" value="85" step="5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" oninput="updateCalculator()" />
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-2">
+              <span class="text-slate-700 font-medium">Current Supply PPD</span>
+              <span id="ppd-val" class="text-cyan-600 font-bold">$14.00</span>
+            </div>
+            <input type="range" id="ppd-slider" min="8" max="25" value="14" step="0.5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" oninput="updateCalculator()" />
+          </div>
         </div>
-        <input type="range" class="brand-slider w-full mb-8" id="bedSlider" min="1" max="500" value="120">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-6">
-          <div class="flex justify-between items-center py-2 border-b border-slate-800"><span class="text-sm text-slate-400">Incontinence</span><span class="text-sm font-semibold text-white tabular-nums" id="cat-inc">$0</span></div>
-          <div class="flex justify-between items-center py-2 border-b border-slate-800"><span class="text-sm text-slate-400">PPE / Gloves</span><span class="text-sm font-semibold text-white tabular-nums" id="cat-ppe">$0</span></div>
-          <div class="flex justify-between items-center py-2 border-b border-slate-800"><span class="text-sm text-slate-400">Can Liners</span><span class="text-sm font-semibold text-white tabular-nums" id="cat-lin">$0</span></div>
-          <div class="flex justify-between items-center py-2 border-b border-slate-800"><span class="text-sm text-slate-400">Dietary</span><span class="text-sm font-semibold text-white tabular-nums" id="cat-die">$0</span></div>
-          <div class="flex justify-between items-center py-2 border-b border-slate-800"><span class="text-sm text-slate-400">Linens</span><span class="text-sm font-semibold text-white tabular-nums" id="cat-lnr">$0</span></div>
-          <div class="flex justify-between items-center py-2 border-b border-slate-800"><span class="text-sm text-slate-400">Janitorial</span><span class="text-sm font-semibold text-white tabular-nums" id="cat-jan">$0</span></div>
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl text-center flex flex-col justify-center h-full">
+          <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Estimated Annual Savings</div>
+          <div id="annual-savings" class="text-4xl sm:text-5xl font-black text-cyan-600 my-2">$78,695</div>
+          <p class="text-xs text-slate-500 mt-2">Based on a conservative 15% aggregate spend reduction across all purchasing categories.</p>
+          <a href="#audit-form" class="mt-6 inline-block w-full py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition">Claim Your Audit</a>
         </div>
-        <div class="flex justify-between items-baseline pt-4 border-t border-slate-800">
-          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Current Monthly Spend</span>
-          <span class="text-2xl font-semibold text-white tabular-nums" id="totalSpend">$0</span>
-        </div>
-        <div class="mt-4 p-4 bg-cyan-950/40 border border-cyan-900/60 rounded-xl flex justify-between items-center">
-          <span class="text-sm font-semibold text-cyan-300">Est. Monthly Savings (18%)</span>
-          <span class="text-xl font-bold text-cyan-400 tabular-nums" id="totalSavings">$0</span>
-        </div>
-        <p class="text-[11px] text-slate-500 mt-4 text-center italic">Based on national PPD benchmarks for skilled nursing facilities.</p>
       </div>
     </div>
   </section>
 
   <section id="categories" class="py-20 px-6 max-w-6xl mx-auto">
     <div class="text-center mb-14">
-      <h2 class="text-3xl font-bold text-white tracking-tight">Full Facility Coverage. Any Category.</h2>
-      <p class="text-slate-400 mt-2 text-sm max-w-lg mx-auto">We leverage collective volume to secure national tier contract pricing across your entire operational footprint.</p>
+      <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Full Facility Coverage. Any Category.</h2>
+      <p class="text-slate-600 mt-2 text-sm max-w-lg mx-auto">We leverage collective volume to secure national tier contract pricing across your entire operational footprint.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="p-6 bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl transition duration-300">
-        <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/40 flex items-center justify-center mb-4 text-cyan-400">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.75 21a.75.75 0 01-.75-.75V17c0-2.21 1.79-4 4-4h8c2.21 0 4 1.79 4 4v3.25a.75.75 0 01-.75.75H4.75zM12 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
-        </div>
-        <h3 class="text-lg font-semibold text-white mb-2">Clinical & Nursing</h3>
-        <p class="text-sm text-slate-400 leading-relaxed">Incontinence, wound care, enteral feeding, gloves, and daily medical supplies.</p>
-      </div>
-      <div class="p-6 bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl transition duration-300">
-        <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/40 flex items-center justify-center mb-4 text-cyan-400">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg>
-        </div>
-        <h3 class="text-lg font-semibold text-white mb-2">Dietary & Foodservice</h3>
-        <p class="text-sm text-slate-400 leading-relaxed">Raw food contracts, supplements, kitchen sanitation, and specialized equipment.</p>
-      </div>
-      <div class="p-6 bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl transition duration-300">
-        <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/40 flex items-center justify-center mb-4 text-cyan-400">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7-7-7M12 3v18"/></svg>
-        </div>
-        <h3 class="text-lg font-semibold text-white mb-2">Janitorial & Sanitation</h3>
-        <p class="text-sm text-slate-400 leading-relaxed">Paper products, trash liners, chemical dispensing systems, and facility maintenance.</p>
-      </div>
-      <div class="p-6 bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl transition duration-300">
-        <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/40 flex items-center justify-center mb-4 text-cyan-400">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
-        </div>
-        <h3 class="text-lg font-semibold text-white mb-2">Capital & Furniture</h3>
-        <p class="text-sm text-slate-400 leading-relaxed">Beds, patient lifts, interior decor, resident room furnishings, and HVAC.</p>
-      </div>
-      <div class="p-6 bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl transition duration-300">
-        <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/40 flex items-center justify-center mb-4 text-cyan-400">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-        </div>
-        <h3 class="text-lg font-semibold text-white mb-2">Office & Technology</h3>
-        <p class="text-sm text-slate-400 leading-relaxed">Administrative supplies, printing, hardware, and facility management software.</p>
-      </div>
-      <div class="p-6 bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl transition duration-300">
-        <div class="w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-800/40 flex items-center justify-center mb-4 text-cyan-400">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-        </div>
-        <h3 class="text-lg font-semibold text-white mb-2">Ancillary Services</h3>
-        <p class="text-sm text-slate-400 leading-relaxed">Linen rentals, biohazard disposal, waste management, and lab contracts.</p>
-      </div>
+      <div class="p-6 bg-white border border-slate-200 hover:border-cyan-400 hover:shadow-md rounded-2xl transition"><div class="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-200 flex items-center justify-center mb-4 text-cyan-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div><h3 class="text-lg font-semibold text-slate-900 mb-2">Clinical & Nursing</h3><p class="text-sm text-slate-600 leading-relaxed">Incontinence, wound care, enteral feeding, gloves, and daily medical supplies from top distributors.</p></div>
+      <div class="p-6 bg-white border border-slate-200 hover:border-cyan-400 hover:shadow-md rounded-2xl transition"><div class="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-200 flex items-center justify-center mb-4 text-cyan-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg></div><h3 class="text-lg font-semibold text-slate-900 mb-2">Dietary & Foodservice</h3><p class="text-sm text-slate-600 leading-relaxed">Broadline raw food contracts, dietary supplements, kitchen sanitation, and specialized equipment.</p></div>
+      <div class="p-6 bg-white border border-slate-200 hover:border-cyan-400 hover:shadow-md rounded-2xl transition"><div class="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-200 flex items-center justify-center mb-4 text-cyan-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg></div><h3 class="text-lg font-semibold text-slate-900 mb-2">Janitorial & Sanitation</h3><p class="text-sm text-slate-600 leading-relaxed">Paper goods, trash liners, chemical dispensing systems, floor care, and facility maintenance.</p></div>
+      <div class="p-6 bg-white border border-slate-200 hover:border-cyan-400 hover:shadow-md rounded-2xl transition"><div class="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-200 flex items-center justify-center mb-4 text-cyan-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div><h3 class="text-lg font-semibold text-slate-900 mb-2">Capital & Furniture</h3><p class="text-sm text-slate-600 leading-relaxed">Electric resident beds, patient lifts, interior furnishings, flooring, and facility HVAC upgrades.</p></div>
+      <div class="p-6 bg-white border border-slate-200 hover:border-cyan-400 hover:shadow-md rounded-2xl transition"><div class="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-200 flex items-center justify-center mb-4 text-cyan-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><h3 class="text-lg font-semibold text-slate-900 mb-2">Office & Technology</h3><p class="text-sm text-slate-600 leading-relaxed">Administrative supplies, hardware, commercial printing, telecom, and facility software.</p></div>
+      <div class="p-6 bg-white border border-slate-200 hover:border-cyan-400 hover:shadow-md rounded-2xl transition"><div class="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-200 flex items-center justify-center mb-4 text-cyan-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div><h3 class="text-lg font-semibold text-slate-900 mb-2">Ancillary Services</h3><p class="text-sm text-slate-600 leading-relaxed">Commercial linen rental, medical waste, biohazard disposal, trash hauling, and lab contracts.</p></div>
     </div>
   </section>
 
-  <section class="py-16 bg-slate-900/40 border-y border-slate-800/60 px-6">
+  <section class="py-16 bg-slate-50 border-y border-slate-200 px-6">
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="flex gap-4 items-start">
-        <svg class="w-8 h-8 text-cyan-400 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-        <div>
-          <h4 class="font-semibold text-white text-base">Keep Your Current Vendors</h4>
-          <p class="text-xs text-slate-400 mt-1 leading-relaxed">No operational friction. Continue purchasing directly from your existing distributors using our tiered pricing.</p>
-        </div>
-      </div>
-      <div class="flex gap-4 items-start">
-        <svg class="w-8 h-8 text-cyan-400 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-        <div>
-          <h4 class="font-semibold text-white text-base">Formulary Control & AI Guardrails</h4>
-          <p class="text-xs text-slate-400 mt-1 leading-relaxed">Automated tracking flags off-contract substitutions and price creep before invoices reach your accounts payable department.</p>
-        </div>
-      </div>
-      <div class="flex gap-4 items-start">
-        <svg class="w-8 h-8 text-cyan-400 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
-        <div>
-          <h4 class="font-semibold text-white text-base">Zero Risk Line-Item Audit</h4>
-          <p class="text-xs text-slate-400 mt-1 leading-relaxed">Provide 30 days of recent spend files. We present a line-by-line price comparison proving your exact dollar savings upfront.</p>
-        </div>
-      </div>
+      <div class="flex gap-4 items-start"><svg class="w-8 h-8 text-cyan-600 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg><div><h4 class="font-semibold text-slate-900 text-base">Keep Your Current Vendors</h4><p class="text-xs text-slate-600 mt-1 leading-relaxed">No supply chain disruption. Continue buying directly from your current distributors using our tier rates.</p></div></div>
+      <div class="flex gap-4 items-start"><svg class="w-8 h-8 text-cyan-600 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/></svg><div><h4 class="font-semibold text-slate-900 text-base">Formulary Control & AI Guardrails</h4><p class="text-xs text-slate-600 mt-1 leading-relaxed">Automated tracking flags off-contract substitutions and price creep before invoices hit accounts payable.</p></div></div>
+      <div class="flex gap-4 items-start"><svg class="w-8 h-8 text-cyan-600 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><h4 class="font-semibold text-slate-900 text-base">Zero-Risk Line-Item Audit</h4><p class="text-xs text-slate-600 mt-1 leading-relaxed">Provide 30 days of recent spend files. We present a side-by-side price comparison proving your exact dollar savings.</p></div></div>
     </div>
   </section>
 
   <section id="audit-form" class="py-20 px-6 max-w-3xl mx-auto">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Request Your Free Line-Item Audit</h2>
-      <p class="text-slate-400 mt-3 text-sm max-w-lg mx-auto">Tell us about your facility. We'll respond within one business day with your custom savings projection.</p>
-    </div>
-    <div class="p-8 sm:p-10 rounded-3xl bg-slate-900/60 border border-slate-800">
-      <form id="auditForm" action="https://formspree.io/f/xzdqarjo" method="POST" class="space-y-4">
+    <div class="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-lg relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="text-center mb-8 relative z-10">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Request Your Free Line-Item Audit</h2>
+        <p class="text-slate-600 text-sm mt-2">See your facility's exact dollar savings within 48 hours. Zero obligation.</p>
+      </div>
+      <form action="https://formspree.io/f/xzdqarjo" method="POST" class="space-y-4 relative z-10">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">First Name</label>
-            <input type="text" name="first_name" required placeholder="Jane" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Last Name</label>
-            <input type="text" name="last_name" required placeholder="Smith" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
-          </div>
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Facility Name</label>
-          <input type="text" name="facility" required placeholder="Sunrise Healthcare Center" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
+          <div><label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Your Name</label><input type="text" name="name" required placeholder="Sarah Jenkins" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 transition"></div>
+          <div><label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Work Email</label><input type="email" name="email" required placeholder="sjenkins@facility.com" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 transition"></div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Your Title</label>
-            <input type="text" name="title" placeholder="Administrator" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Number of Beds</label>
-            <select name="beds" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
-              <option value="" disabled selected>Select</option>
-              <option>1–50</option><option>51–100</option><option>101–200</option><option>201–300</option><option>300+</option>
-            </select>
-          </div>
+          <div><label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Facility Name</label><input type="text" name="facility" required placeholder="Oakridge Healthcare Center" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 transition"></div>
+          <div><label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Number of Beds</label><input type="number" name="bed_count" placeholder="120" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 transition"></div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Email</label>
-            <input type="email" name="email" required placeholder="jane@facility.com" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Phone</label>
-            <input type="tel" name="phone" placeholder="(555) 555-5555" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition">
-          </div>
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Message (optional)</label>
-          <textarea name="message" rows="3" placeholder="Tell us about your current procurement setup..." class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white text-sm focus:border-cyan-500 focus:outline-none transition"></textarea>
-        </div>
-        <button type="submit" id="submitBtn" class="w-full px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-xl transition duration-200 shadow-lg shadow-cyan-500/25">
-          Request Free Line-Item Audit →
-        </button>
-        <p class="text-xs text-slate-500 text-center">We'll respond within one business day. No obligation.</p>
+        <div><label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Primary Vendors Currently Used</label><input type="text" name="current_vendors" placeholder="e.g. Medline, US Foods, Staples" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-100 transition"></div>
+        <button type="submit" class="w-full py-4 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl transition duration-200 shadow-lg shadow-cyan-500/20 text-sm uppercase tracking-wider mt-2">Submit Audit Request</button>
       </form>
     </div>
   </section>
 
-  <section class="py-20 px-6 max-w-4xl mx-auto text-center">
-    <div class="p-10 sm:p-12 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 shadow-2xl relative overflow-hidden">
-      <div class="absolute -top-24 -right-24 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
-      <h2 class="text-2xl sm:text-3xl font-bold text-white relative z-10">See Your Facility Savings in 48 Hours</h2>
-      <p class="text-slate-400 text-sm mt-3 max-w-lg mx-auto relative z-10">Upload recent invoices or spend reports. We'll run a side-by-side line-item comparison against our national purchasing network contracts.</p>
-      <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" target="_blank" rel="noopener noreferrer" class="inline-block mt-8 px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-xl transition duration-200 shadow-lg shadow-cyan-500/20 relative z-10">
-        Book a 15-Minute Intro Call
-      </a>
-    </div>
-  </section>
-
-  <footer class="border-t border-slate-800/80 py-12 px-6">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between gap-6">
-      <div>
-        <a href="/" class="text-lg font-bold text-white tracking-tight flex items-center gap-2">
-          <span class="w-7 h-7 rounded-lg bg-cyan-500 text-slate-950 flex items-center justify-center font-black text-sm">P</span>
-          Par Level <span class="text-cyan-400">AI</span>
-        </a>
-        <p class="text-xs text-slate-500 mt-2">A MeddMax LLC company · Edison, NJ</p>
-      </div>
-      <div class="flex flex-col sm:items-end gap-1 text-sm text-slate-400">
-        <a href="mailto:david@meddmax.com" class="hover:text-cyan-400 transition">david@meddmax.com</a>
-        <a href="tel:+16466444641" class="hover:text-cyan-400 transition">646-644-4641</a>
-        <span class="text-xs text-slate-600 mt-2">© 2026 Par Level AI</span>
+  <footer class="py-12 border-t border-slate-200 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>© 2026 Par Level AI Inc. All rights reserved. Enterprise GPO & Spend Management.</div>
+      <div class="flex items-center gap-6">
+        <a href="https://calendar.app.google/xmBKrMPQVxXKXrku6" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-600 transition">Book Intro Call</a>
+        <a href="#audit-form" class="hover:text-cyan-600 transition">Free Audit</a>
       </div>
     </div>
   </footer>
-
-  <div id="toast" class="fixed bottom-6 right-6 px-6 py-3 bg-emerald-500 text-slate-950 font-semibold text-sm rounded-full shadow-lg opacity-0 translate-y-10 transition-all duration-300 pointer-events-none z-50">
-    Audit request sent successfully.
-  </div>
 
   <nav aria-label="Semantic Directory" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
     <h4>Solutions</h4>
@@ -368,57 +247,18 @@
       });
     });
 
-    (function() {
-      var slider = document.getElementById('bedSlider');
-      var display = document.getElementById('bedDisplay');
-      var ppd = { inc: 1.15, ppe: 0.45, lin: 0.18, die: 3.20, lnr: 0.22, jan: 0.35 };
-      var els = {
-        inc: document.getElementById('cat-inc'),
-        ppe: document.getElementById('cat-ppe'),
-        lin: document.getElementById('cat-lin'),
-        die: document.getElementById('cat-die'),
-        lnr: document.getElementById('cat-lnr'),
-        jan: document.getElementById('cat-jan')
-      };
-      var totalEl = document.getElementById('totalSpend');
-      var savEl = document.getElementById('totalSavings');
-      var nf = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
-      function update() {
-        var beds = parseInt(slider.value);
-        display.textContent = beds;
-        var total = 0;
-        for (var k in ppd) {
-          var val = beds * ppd[k] * 30.4;
-          els[k].textContent = nf.format(val);
-          total += val;
-        }
-        totalEl.textContent = nf.format(total);
-        savEl.textContent = nf.format(total * 0.18);
-      }
-      slider.addEventListener('input', update);
-      update();
-    })();
-
-    document.getElementById('auditForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var f = this, btn = document.getElementById('submitBtn');
-      fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
-        .then(function(r) {
-          if (r.ok) {
-            f.reset();
-            btn.textContent = 'Sent ✓';
-            btn.classList.remove('bg-cyan-500', 'hover:bg-cyan-400');
-            btn.classList.add('bg-emerald-500');
-            var toast = document.getElementById('toast');
-            toast.classList.remove('opacity-0', 'translate-y-10');
-            toast.classList.add('opacity-100', 'translate-y-0');
-            setTimeout(function() {
-              toast.classList.add('opacity-0', 'translate-y-10');
-              toast.classList.remove('opacity-100', 'translate-y-0');
-            }, 5000);
-          }
-        });
-    });
+    function updateCalculator() {
+      const beds = parseInt(document.getElementById('beds-slider').value);
+      const occ = parseInt(document.getElementById('occ-slider').value) / 100;
+      const ppd = parseFloat(document.getElementById('ppd-slider').value);
+      document.getElementById('beds-val').innerText = beds + ' Beds';
+      document.getElementById('occ-val').innerText = Math.round(occ * 100) + '%';
+      document.getElementById('ppd-val').innerText = '$' + ppd.toFixed(2);
+      const annualSpend = beds * occ * ppd * 365;
+      const annualSavings = Math.round(annualSpend * 0.15);
+      document.getElementById('annual-savings').innerText = '$' + annualSavings.toLocaleString();
+    }
+    window.addEventListener('DOMContentLoaded', updateCalculator);
   </script>
 
   <script defer src="/_vercel/insights/script.js"></script>
